@@ -46,6 +46,12 @@
   padding: 0;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -57,7 +63,6 @@ body {
   background-color: var(--finora-bg);
   color: var(--finora-text);
   line-height: 1.5;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -366,6 +371,9 @@ body {
 .video-play-bubble {
   width: 48px;
   height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  flex-shrink: 0;
   border-radius: 50%;
   background: #FFFFFF;
   color: var(--finora-teal);
@@ -1155,7 +1163,8 @@ select.form-control-input {
   font-weight: 800;
   color: var(--finora-navy);
   margin: 0;
-  white-space: nowrap;
+  white-space: normal;
+  line-height: 1.3;
 }
 
 /* Horizontal dotted connector arrow stretching between titles */
@@ -2177,6 +2186,10 @@ select.form-control-input {
   }
 }
 
+.mobile-menu-cta-wrap {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .nav-links-menu {
     display: none;
@@ -2198,8 +2211,56 @@ select.form-control-input {
     animation: finoraNavSlide 0.22s ease-out forwards;
   }
 
+  .nav-right-actions {
+    gap: 8px;
+  }
+
+  .nav-right-actions .btn-teal-pill {
+    display: none;
+  }
+
   .mobile-menu-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: transparent;
+    border: none;
+    color: var(--finora-navy);
+    font-size: 1.45rem;
+    cursor: pointer;
+  }
+
+  .mobile-menu-cta-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 14px;
+    border-top: 1px solid #E2E8F0;
+    width: 100%;
+  }
+
+  .mobile-drawer-cta {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+    font-size: 0.9375rem;
+  }
+
+  .mobile-drawer-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border-radius: 30px;
+    background: #E6F7F3;
+    color: var(--finora-teal);
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-decoration: none;
   }
 
   .expert-call-box {
@@ -2213,6 +2274,24 @@ select.form-control-input {
   .hero-features-row {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .hero-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .hero-actions-row .btn-teal-pill {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 22px;
+  }
+
+  .video-trigger-btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .services-header-row {
@@ -5410,6 +5489,7 @@ select.form-control-input {
     opacity: 0;
     transform: translateY(-8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -5417,6 +5497,7 @@ select.form-control-input {
 }
 
 @media (max-width: 768px) {
+
   .services-hero-script-overlay,
   .how-hero-script-overlay,
   .contact-hero-script-overlay,
@@ -5466,6 +5547,110 @@ select.form-control-input {
 }
 
 @media (max-width: 480px) {
+
+  .hero-title,
+  .services-hero-title,
+  .about-hero-title,
+  .how-hero-title,
+  .contact-hero-title {
+    font-size: 1.95rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .calc-section-title,
+  .why-choose-heading,
+  .testimonials-heading,
+  .channels-section-title,
+  .branches-section-title,
+  .partners-heading,
+  .story-main-heading {
+    font-size: 1.7rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .services-hero-script-overlay,
+  .how-hero-script-overlay,
+  .contact-hero-script-overlay {
+    display: none;
+  }
+
+  .back-to-top-btn {
+    bottom: 18px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ==========================================================================
+   GLOBAL MOBILE REFINEMENTS & TOUCH UX (ACROSS ALL 5 PAGES)
+   ========================================================================== */
+@keyframes finoraNavSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .services-hero-script-overlay,
+  .how-hero-script-overlay,
+  .contact-hero-script-overlay,
+  .advisor-script-overlay,
+  .docs-script-overlay {
+    transform: scale(0.72);
+    transform-origin: top right;
+    top: 10px;
+    right: 12px;
+    opacity: 0.85;
+  }
+}
+
+@media (max-width: 500px) {
+  .site-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .brand-logo-img {
+    height: 36px;
+  }
+
+  .nav-inner {
+    gap: 12px;
+  }
+
+  .nav-right-actions {
+    gap: 10px;
+  }
+
+  .nav-right-actions .btn-teal-pill {
+    padding: 8px 14px;
+    font-size: 0.8125rem;
+    gap: 5px;
+  }
+
+  .nav-right-actions .btn-teal-pill span {
+    display: none;
+  }
+
+  .nav-right-actions .btn-teal-pill::before {
+    content: "Apply";
+    font-weight: 700;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 480px) {
+
   .hero-title,
   .services-hero-title,
   .about-hero-title,
