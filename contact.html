@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Custom Finora Stylesheet -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=1793278371068">
+  <link rel="stylesheet" href="assets/css/styles.css?v=1793278700037">
 </head>
 <body>
 
@@ -42,15 +42,17 @@
           <li><a href="about.html" class="nav-item-link">About Us</a></li>
           <li><a href="how-it-works.html" class="nav-item-link">How It Works</a></li>
           <li><a href="contact.html" class="nav-item-link active">Contact Us</a></li>
-          <li class="mobile-menu-cta-wrap">
-            <a href="#consultation" class="btn-teal-pill js-open-consultation-modal mobile-drawer-cta">
-              <span>Get Free Consultation</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-            <a href="tel:+919876543210" class="mobile-drawer-phone">
-              <i class="fa-solid fa-phone"></i>
-              <span>+91 98765 43210 (Expert)</span>
-            </a>
+          <li class="mobile-menu-cta-wrap" style="list-style: none; width: 100%; margin-top: 10px; padding-top: 16px; border-top: 1px solid #E2E8F0;">
+            <div style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
+              <a href="#consultation" class="btn-teal-pill js-open-consultation-modal mobile-drawer-cta" style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 13px 20px; font-weight: 700; text-decoration: none; border-radius: 30px; background: #00A884; color: #FFFFFF; font-size: 0.9375rem; box-shadow: 0 4px 14px rgba(0,168,132,0.3);">
+                <span>Get Free Consultation</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="tel:+919876543210" class="mobile-drawer-phone" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #E6F7F3; color: #00A884; font-weight: 700; font-size: 0.875rem; padding: 11px 16px; border-radius: 30px; text-decoration: none; border: 1px solid rgba(0,168,132,0.2);">
+                <i class="fa-solid fa-phone"></i>
+                <span>Call Expert: +91 98765 43210</span>
+              </a>
+            </div>
           </li>
         </ul>
       </nav>
@@ -279,7 +281,7 @@
                   <label for="contactFullName" class="contact-label">Full Name *</label>
                   <div class="contact-input-wrap">
                     <i class="fa-regular fa-user contact-input-icon"></i>
-                    <input type="text" id="contactFullName" required placeholder="e.g. Rajesh Kumar" class="contact-input">
+                    <input type="text" id="contactFullName" required placeholder="Enter your name" class="contact-input">
                   </div>
                 </div>
 
@@ -288,7 +290,7 @@
                   <label for="contactEmail" class="contact-label">Email Address *</label>
                   <div class="contact-input-wrap">
                     <i class="fa-regular fa-envelope contact-input-icon"></i>
-                    <input type="email" id="contactEmail" required placeholder="rajesh@example.com" class="contact-input">
+                    <input type="email" id="contactEmail" required placeholder="Enter your email address" class="contact-input">
                   </div>
                 </div>
 
@@ -297,7 +299,7 @@
                   <label for="contactPhone" class="contact-label">Mobile Number *</label>
                   <div class="contact-input-wrap">
                     <i class="fa-solid fa-phone contact-input-icon"></i>
-                    <input type="tel" id="contactPhone" required placeholder="+91 98765 43210" class="contact-input">
+                    <input type="tel" id="contactPhone" required placeholder="Enter your mobile number" class="contact-input">
                   </div>
                 </div>
 
@@ -306,7 +308,7 @@
                   <label for="contactCity" class="contact-label">Your Location / City *</label>
                   <div class="contact-input-wrap">
                     <i class="fa-solid fa-location-dot contact-input-icon"></i>
-                    <input type="text" id="contactCity" required placeholder="e.g. Chennai, Tamil Nadu" class="contact-input">
+                    <input type="text" id="contactCity" required placeholder="Enter your city / location" class="contact-input">
                   </div>
                 </div>
 
@@ -776,12 +778,12 @@
       <form onsubmit="event.preventDefault(); alert('Thank you! Your enquiry has been received.'); document.getElementById('consultationModal').classList.remove('active');">
         <div style="margin-bottom: 14px;">
           <label style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0A2540; margin-bottom: 4px;">Full Name</label>
-          <input type="text" required placeholder="John Doe" style="width: 100%; padding: 11px 14px; border: 1px solid #CBD5E1; border-radius: 10px; font-size: 0.9375rem; outline: none;">
+          <input type="text" required placeholder="Enter your name" style="width: 100%; padding: 11px 14px; border: 1px solid #CBD5E1; border-radius: 10px; font-size: 0.9375rem; outline: none;">
         </div>
 
         <div style="margin-bottom: 14px;">
           <label style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0A2540; margin-bottom: 4px;">Mobile Number</label>
-          <input type="tel" required placeholder="+91 98765 00000" style="width: 100%; padding: 11px 14px; border: 1px solid #CBD5E1; border-radius: 10px; font-size: 0.9375rem; outline: none;">
+          <input type="tel" required placeholder="Enter your mobile number" style="width: 100%; padding: 11px 14px; border: 1px solid #CBD5E1; border-radius: 10px; font-size: 0.9375rem; outline: none;">
         </div>
 
         <div style="margin-bottom: 18px;">
@@ -803,6 +805,6 @@
   </div>
 
   <!-- Scripts -->
-  <script src="assets/js/main.js?v=1793278371068"></script>
+  <script src="assets/js/main.js?v=1793278700037"></script>
 </body>
 </html>
