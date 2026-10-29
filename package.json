@@ -2,11 +2,5 @@
   "name": "finora-loan-website",
   "version": "1.0.0",
   "private": true,
-  "description": "Finora - Finance Made Simpler Official Website",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "devDependencies": {
-    "sharp": "^0.35.5"
-  }
+  "description": "Finora - Finance Made Simpler Official Website"
 }
