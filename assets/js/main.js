@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   // 6. SCROLL TO TOP CONTROLLER
   // =========================================================================
-  const scrollToTopBtn = document.querySelector('.js-scroll-to-top');
+  const scrollToTopBtn = document.querySelector('.js-scroll-to-top') || document.getElementById('backToTopBtn');
   if (scrollToTopBtn) {
     scrollToTopBtn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -181,6 +181,101 @@ document.addEventListener('DOMContentLoaded', () => {
         top: 0,
         behavior: 'smooth'
       });
+    });
+  }
+
+  // =========================================================================
+  // 7. FREQUENTLY ASKED QUESTIONS (FAQ) ACCORDION CONTROLLER
+  // =========================================================================
+  const faqItems = document.querySelectorAll('.faq-accordion-item');
+  if (faqItems && faqItems.length > 0) {
+    faqItems.forEach((item) => {
+      const headerBtn = item.querySelector('.faq-accordion-header');
+      if (!headerBtn) return;
+
+      headerBtn.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+
+        // Close all items
+        faqItems.forEach((other) => {
+          other.classList.remove('active');
+          const otherHeader = other.querySelector('.faq-accordion-header');
+          const otherBody = other.querySelector('.faq-accordion-body');
+          const otherIcon = other.querySelector('.faq-toggle-icon i');
+
+          if (otherHeader) otherHeader.setAttribute('aria-expanded', 'false');
+          if (otherBody) otherBody.style.display = 'none';
+          if (otherIcon) {
+            otherIcon.classList.remove('fa-minus');
+            otherIcon.classList.add('fa-plus');
+          }
+        });
+
+        // If it wasn't active, expand it
+        if (!isActive) {
+          item.classList.add('active');
+          headerBtn.setAttribute('aria-expanded', 'true');
+          const body = item.querySelector('.faq-accordion-body');
+          const icon = item.querySelector('.faq-toggle-icon i');
+
+          if (body) body.style.display = 'block';
+          if (icon) {
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
+          }
+        }
+      });
+    });
+  }
+
+  // =========================================================================
+  // 8. LENDER PARTNERS CAROUSEL CONTROLLER
+  // =========================================================================
+  const partnerTrack = document.getElementById('partnerTrack');
+  const partnerPrev = document.getElementById('partnerPrev');
+  const partnerNext = document.getElementById('partnerNext');
+
+  if (partnerTrack && partnerPrev && partnerNext) {
+    partnerPrev.addEventListener('click', () => {
+      partnerTrack.scrollBy({
+        left: -320,
+        behavior: 'smooth'
+      });
+    });
+
+    partnerNext.addEventListener('click', () => {
+      partnerTrack.scrollBy({
+        left: 320,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  // =========================================================================
+  // 9. CONTACT PAGE FORM SUBMISSION CONTROLLER
+  // =========================================================================
+  const contactPageForm = document.getElementById('contactPageForm');
+  const contactFormNotice = document.getElementById('contactFormNotice');
+
+  if (contactPageForm && contactFormNotice) {
+    contactPageForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = contactPageForm.querySelector('.btn-contact-submit');
+      if (submitBtn) {
+        submitBtn.innerHTML = '<span>Sending Enquiry...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+        submitBtn.style.opacity = '0.7';
+        submitBtn.disabled = true;
+      }
+
+      setTimeout(() => {
+        contactPageForm.reset();
+        if (submitBtn) {
+          submitBtn.innerHTML = '<span>Submit Enquiry</span> <i class="fa-solid fa-arrow-right"></i>';
+          submitBtn.style.opacity = '1';
+          submitBtn.disabled = false;
+        }
+        contactFormNotice.style.display = 'flex';
+      }, 700);
     });
   }
 
