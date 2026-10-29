@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-hero-entrepreneur" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#114B47"/>
+      <stop offset="100%" stop-color="#1D7A73"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="700" fill="url(#grad-hero-entrepreneur)" />
+  <g opacity="0.15">
+    <circle cx="400" cy="140" r="200" fill="#FFFFFF"/>
+    <circle cx="50" cy="595" r="150" fill="#FFFFFF"/>
+  </g>
+  <rect x="200" y="320" width="100" height="140" rx="16" fill="#FFFFFF" opacity="0.9"/>
+           <circle cx="250" cy="270" r="35" fill="#38BDF8"/>
+           <path d="M220 380 L240 400 L280 350" stroke="#0F4C47" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="250" y="620" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="700" font-size="23" fill="#FFFFFF" text-anchor="middle" filter="drop-shadow(0px 2px 4px rgba(0,0,0,0.4))">
+    Modern Business Executive
+  </text>
+  <text x="250" y="652" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="500" font-size="14" fill="#E0F2FE" text-anchor="middle" opacity="0.9">
+    Aspect Ratio 3:4 • Glass Tech Office & Tablet
+  </text>
+</svg>

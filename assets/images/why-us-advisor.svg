@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-why-us-advisor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F4C47"/>
+      <stop offset="100%" stop-color="#1A7B72"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#grad-why-us-advisor)" />
+  <g opacity="0.15">
+    <circle cx="480" cy="120" r="240" fill="#FFFFFF"/>
+    <circle cx="60" cy="510" r="180" fill="#FFFFFF"/>
+  </g>
+  <circle cx="300" cy="250" r="65" fill="#FFFFFF" opacity="0.9"/>
+           <path d="M190 440 C190 350 410 350 410 440 Z" fill="#FF5B00"/>
+  <text x="300" y="520" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="700" font-size="27" fill="#FFFFFF" text-anchor="middle" filter="drop-shadow(0px 2px 4px rgba(0,0,0,0.4))">
+    Certified Loan Advisor
+  </text>
+  <text x="300" y="552" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="500" font-size="17" fill="#E0F2FE" text-anchor="middle" opacity="0.9">
+    Aspect Ratio 1:1 • Trusted 1-on-1 Guidance
+  </text>
+</svg>

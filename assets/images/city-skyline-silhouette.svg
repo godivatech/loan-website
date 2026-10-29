@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 240" fill="none" preserveAspectRatio="none">
+  <!-- Subtle Architectural Skyline Silhouette -->
+  <g fill="#0F4C47" opacity="0.12">
+    <!-- Buildings Layer 1 Back -->
+    <rect x="0" y="160" width="1600" height="80" />
+    <polygon points="50,160 50,70 90,70 90,160" />
+    <polygon points="85,160 85,90 125,90 125,160" />
+    <polygon points="120,160 120,40 135,20 150,40 150,160" />
+    <polygon points="170,160 170,110 210,110 210,160" />
+    <polygon points="230,160 230,80 270,80 270,160" />
+    <polygon points="300,160 300,50 340,50 340,160" />
+    <polygon points="380,160 380,100 420,100 420,160" />
+    <polygon points="460,160 460,30 470,10 480,30 490,160" />
+    <polygon points="530,160 530,85 580,85 580,160" />
+    <polygon points="620,160 620,65 670,65 670,160" />
+    <polygon points="710,160 710,115 760,115 760,160" />
+    <polygon points="800,160 800,20 815,5 830,20 840,160" />
+    <polygon points="880,160 880,95 930,95 930,160" />
+    <polygon points="970,160 970,60 1020,60 1020,160" />
+    <polygon points="1060,160 1060,105 1110,105 1110,160" />
+    <polygon points="1150,160 1150,45 1195,45 1195,160" />
+    <polygon points="1240,160 1240,80 1290,80 1290,160" />
+    <polygon points="1330,160 1330,25 1345,10 1360,25 1370,160" />
+    <polygon points="1420,160 1420,70 1470,70 1470,160" />
+    <polygon points="1500,160 1500,110 1560,110 1560,160" />
+  </g>
+  <g fill="#0F4C47" opacity="0.22">
+    <!-- Foreground sharper towers -->
+    <rect x="70" y="100" width="35" height="140" />
+    <rect x="190" y="125" width="45" height="115" />
+    <polygon points="310,160 310,70 330,45 350,70 350,160" />
+    <rect x="400" y="120" width="50" height="120" />
+    <rect x="635" y="90" width="45" height="150" />
+    <polygon points="810,160 810,40 820,25 830,40 830,160" />
+    <rect x="990" y="85" width="40" height="155" />
+    <rect x="1165" y="75" width="50" height="165" />
+    <polygon points="1340,160 1340,55 1352,40 1365,55 1365,160" />
+    <rect x="1440" y="95" width="45" height="145" />
+  </g>
+</svg>
+

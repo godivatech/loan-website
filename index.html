@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finora - Finance Made Simpler | Big Dreams, Brighter Tomorrows</title>
+  <meta name="description" content="Apply for Home, Property, Business or Personal Loans with expert guidance and a hassle-free process with Finora.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome 6 for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Finora Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. FINORA MAIN NAVBAR (EXACT REFERENCE MATCH)
+       ========================================================================== -->
+  <header class="finora-navbar">
+    <div class="site-container nav-inner">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-link">
+        <img src="assets/images/finora-logo.svg" alt="Finora - Finance Made Simpler" class="brand-logo-img">
+      </a>
+
+      <!-- Center Navigation Links -->
+      <nav>
+        <ul class="nav-links-menu">
+          <li><a href="#" class="nav-item-link active">Home</a></li>
+          <li>
+            <a href="#services" class="nav-item-link">
+              <span>Loan Services</span>
+              <i class="fa-solid fa-chevron-down nav-dropdown-icon"></i>
+            </a>
+          </li>
+          <li><a href="#about" class="nav-item-link">About Us</a></li>
+          <li><a href="#how-it-works" class="nav-item-link">How It Works</a></li>
+          <li><a href="#emi-calculator" class="nav-item-link">EMI Calculator</a></li>
+          <li><a href="#contact" class="nav-item-link">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Contact & CTA -->
+      <div class="nav-right-actions">
+        <a href="tel:+919876543210" class="expert-call-box">
+          <div class="call-icon-circle">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="call-text-meta">
+            <span class="phone-number">+91 98765 43210</span>
+            <span class="phone-label">Talk to Our Expert</span>
+          </div>
+        </a>
+
+        <a href="#consultation" class="btn-teal-pill js-open-consultation-modal">
+          <span>Get Free Consultation</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       2. HERO SECTION WITH EXACT REFERENCE LAYOUT & ORGANIC BOTTOM CURVE
+       ========================================================================== -->
+  <section class="finora-hero">
+    <!-- Center-Right Background Visual (Modern Villa & Smiling Indian Couple) -->
+    <div class="hero-backdrop-graphic"></div>
+
+    <div class="site-container">
+      <div class="hero-grid-wrapper">
+        
+        <!-- Left Column: Copy & CTAs -->
+        <div class="hero-content-col">
+          <span class="eyebrow-tag">YOUR FINANCIAL PARTNER</span>
+          
+          <h1 class="hero-title">
+            Big Dreams
+            <span class="hero-title-highlight">Brighter Tomorrows</span>
+          </h1>
+
+          <p class="hero-description">
+            Apply for Home, Property, Business or Personal Loans with expert guidance and a hassle-free process.
+          </p>
+
+          <!-- 3 Bullet Features in Row -->
+          <div class="hero-features-row">
+            <div class="feature-pill-item">
+              <div class="feature-icon-circle">
+                <i class="fa-solid fa-user-tie"></i>
+              </div>
+              <span class="feature-pill-text">Expert Guidance at Every Step</span>
+            </div>
+
+            <div class="feature-pill-item">
+              <div class="feature-icon-circle">
+                <i class="fa-solid fa-landmark"></i>
+              </div>
+              <span class="feature-pill-text">Multiple Lender Options</span>
+            </div>
+
+            <div class="feature-pill-item">
+              <div class="feature-icon-circle">
+                <i class="fa-solid fa-file-circle-check"></i>
+              </div>
+              <span class="feature-pill-text">Simple &amp; Transparent Process</span>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="hero-actions-row">
+            <a href="#services" class="btn-teal-pill">
+              <span>Explore Loan Services</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <button type="button" class="video-trigger-btn" id="openVideoBtn" aria-label="Watch how it works video">
+              <div class="video-play-bubble">
+                <i class="fa-solid fa-play"></i>
+              </div>
+              <div class="video-text-meta">
+                <span class="video-title">Watch How It Works</span>
+                <span class="video-subtitle">1 min video</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: Floating Consultation Form Card -->
+        <div class="hero-form-col">
+          <div class="consultation-card" id="consultation">
+            <div class="consultation-card-header">
+              <h2 class="card-title">Get a Free Consultation</h2>
+              <p class="card-subtitle">
+                Tell us your requirement and our expert will get in touch with you.
+              </p>
+            </div>
+
+            <div id="consultationSuccess" style="display: none; text-align: center; padding: 24px 0;">
+              <i class="fa-solid fa-circle-check" style="font-size: 2.8rem; color: #00A884; margin-bottom: 12px;"></i>
+              <h3 style="font-size: 1.3rem; font-weight: 800; color: #0A2540; margin-bottom: 6px;">Enquiry Submitted!</h3>
+              <p style="font-size: 0.875rem; color: #64748B;">
+                Our loan specialist will call you shortly on your provided mobile number.
+              </p>
+            </div>
+
+            <form class="consultation-form" id="heroConsultationForm">
+              <!-- Field 1: Full Name -->
+              <div class="input-field-group">
+                <i class="fa-regular fa-user input-icon"></i>
+                <input type="text" class="form-control-input" required placeholder="Full Name">
+              </div>
+
+              <!-- Field 2: Mobile Number -->
+              <div class="input-field-group">
+                <i class="fa-solid fa-mobile-screen-button input-icon"></i>
+                <input type="tel" class="form-control-input" required placeholder="Mobile Number">
+              </div>
+
+              <!-- Field 3: Select Loan Type -->
+              <div class="input-field-group">
+                <i class="fa-regular fa-file-lines input-icon"></i>
+                <select class="form-control-input" required>
+                  <option value="" disabled selected>Select Loan Type</option>
+                  <option value="home">Home Loan</option>
+                  <option value="property">Loan Against Property (LAP)</option>
+                  <option value="business">Business Loan</option>
+                  <option value="personal">Personal Loan</option>
+                </select>
+              </div>
+
+              <!-- Field 4: Approx Loan Amount -->
+              <div class="input-field-group">
+                <i class="fa-solid fa-wallet input-icon"></i>
+                <input type="text" class="form-control-input" required placeholder="Approx. Loan Amount">
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn-submit-enquiry">
+                <span>Submit Enquiry</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+
+              <!-- Privacy Assurance -->
+              <div class="privacy-badge-note">
+                <i class="fa-solid fa-lock"></i>
+                <span>Your information is safe with us. We respect your privacy.</span>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Overlapping Floating Stats Pill Over Curve -->
+      <div class="hero-bottom-stats-bar">
+        <div class="stats-pill-container">
+          <div class="stat-metric-item">
+            <div class="stat-icon">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="stat-label-wrap">
+              <span class="stat-val-bold">1000+</span>
+              <span class="stat-desc-text">Happy Customers</span>
+            </div>
+          </div>
+
+          <div class="stat-metric-item">
+            <div class="stat-icon">
+              <i class="fa-solid fa-landmark"></i>
+            </div>
+            <div class="stat-label-wrap">
+              <span class="stat-val-bold">10+</span>
+              <span class="stat-desc-text">Lender Partners</span>
+            </div>
+          </div>
+
+          <div class="stat-metric-item">
+            <div class="stat-icon">
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="stat-label-wrap">
+              <span class="stat-val-bold">4.9/5</span>
+              <span class="stat-desc-text">Customer Rating</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Organic Sweeping Bottom Curve Divider -->
+    <div class="hero-bottom-curve-wrap">
+      <svg viewBox="0 0 1440 95" fill="none" preserveAspectRatio="none">
+        <path d="M0,25 C340,75 520,-5 760,50 C1000,105 1240,15 1440,45 L1440,95 L0,95 Z" fill="#FFFFFF"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       3. SECOND SECTION: LOAN SERVICES (EXACT REFERENCE 4-CARD GRID)
+       ========================================================================== -->
+  <section id="services" class="services-section">
+    <div class="site-container">
+      <!-- Section Header Row -->
+      <div class="services-header-row">
+        <div>
+          <span class="services-badge-pill">LOAN SERVICES</span>
+          <h2 class="services-title">Solutions for Every Financial Need</h2>
+          <p class="services-subtitle">Explore our loan options and take the next step towards your goals.</p>
+        </div>
+        <div>
+          <a href="#consultation" class="btn-view-all-services js-open-consultation-modal">
+            <span>View All Services</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- 4 Cards Row -->
+      <div class="finora-cards-grid">
+        <!-- Card 1: Home Loan -->
+        <div class="finora-service-card">
+          <div class="card-media-wrapper">
+            <img src="assets/images/home page/Twilight Modern Mansion with Lush Landscaping.png" alt="Home Loan" class="card-media-img">
+            <!-- Smooth Wave Curve at bottom of image -->
+            <svg class="card-bottom-wave" viewBox="0 0 280 38" preserveAspectRatio="none">
+              <path d="M0,8 C70,32 170,-4 280,22 L280,38 L0,38 Z" fill="#FFFFFF"/>
+            </svg>
+            <!-- Overlapping Circular Icon -->
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-house-chimney-user"></i>
+            </div>
+          </div>
+          <div class="card-content-body">
+            <h3 class="card-heading">Home Loan</h3>
+            <p class="card-text">Turn your dream home into reality with flexible home loan options.</p>
+            <a href="#consultation" class="card-learn-more js-open-consultation-modal">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Loan Against Property -->
+        <div class="finora-service-card">
+          <div class="card-media-wrapper">
+            <img src="assets/images/home page/Golden Hour New Home Keys.png" alt="Loan Against Property" class="card-media-img">
+            <!-- Smooth Wave Curve at bottom of image -->
+            <svg class="card-bottom-wave" viewBox="0 0 280 38" preserveAspectRatio="none">
+              <path d="M0,8 C70,32 170,-4 280,22 L280,38 L0,38 Z" fill="#FFFFFF"/>
+            </svg>
+            <!-- Overlapping Circular Icon -->
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-building-circle-check"></i>
+            </div>
+          </div>
+          <div class="card-content-body">
+            <h3 class="card-heading">Loan Against Property</h3>
+            <p class="card-text">Unlock the value of your property for your financial needs.</p>
+            <a href="#consultation" class="card-learn-more js-open-consultation-modal">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: Business Loan -->
+        <div class="finora-service-card">
+          <div class="card-media-wrapper">
+            <img src="assets/images/home page/Confident Executive with Growing Financial Charts.png" alt="Business Loan" class="card-media-img">
+            <!-- Smooth Wave Curve at bottom of image -->
+            <svg class="card-bottom-wave" viewBox="0 0 280 38" preserveAspectRatio="none">
+              <path d="M0,8 C70,32 170,-4 280,22 L280,38 L0,38 Z" fill="#FFFFFF"/>
+            </svg>
+            <!-- Overlapping Circular Icon -->
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+          </div>
+          <div class="card-content-body">
+            <h3 class="card-heading">Business Loan</h3>
+            <p class="card-text">Get the right financial support to grow your business.</p>
+            <a href="#consultation" class="card-learn-more js-open-consultation-modal">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 4: Personal Loan -->
+        <div class="finora-service-card">
+          <div class="card-media-wrapper">
+            <img src="assets/images/home page/Warm Professional Portrait at Home.png" alt="Personal Loan" class="card-media-img">
+            <!-- Smooth Wave Curve at bottom of image -->
+            <svg class="card-bottom-wave" viewBox="0 0 280 38" preserveAspectRatio="none">
+              <path d="M0,8 C70,32 170,-4 280,22 L280,38 L0,38 Z" fill="#FFFFFF"/>
+            </svg>
+            <!-- Overlapping Circular Icon -->
+            <div class="card-icon-bubble">
+              <i class="fa-solid fa-hand-holding-dollar"></i>
+            </div>
+          </div>
+          <div class="card-content-body">
+            <h3 class="card-heading">Personal Loan</h3>
+            <p class="card-text">Meet your personal needs with quick and easy loan options.</p>
+            <a href="#consultation" class="card-learn-more js-open-consultation-modal">
+              <span>Learn More</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       4. THIRD SECTION: WHY CHOOSE FINORA (EXACT DESIGN REDESIGN IN CODE)
+       ========================================================================== -->
+  <!-- Invisible SVG Definition for the Responsive Organic Curve Mask -->
+  <svg width="0" height="0" style="position: absolute; pointer-events: none;">
+    <defs>
+      <clipPath id="whyCurveMask" clipPathUnits="objectBoundingBox">
+        <path d="M 0.22,0 C 0.08,0.22 0.0,0.44 0.06,0.68 C 0.12,0.85 0.22,0.95 0.28,1 L 1,1 L 1,0 Z" />
+      </clipPath>
+    </defs>
+  </svg>
+
+  <section id="about" class="why-choose-finora-section">
+    <div class="site-container">
+      <div class="why-choose-card-banner">
+        
+        <!-- Left Content Column -->
+        <div class="why-choose-content-col">
+          <span class="why-choose-badge">WHY CHOOSE FINORA</span>
+          <h2 class="why-choose-heading">
+            More Than Loans
+            <span class="why-choose-heading-green">A Partner for Your Goals</span>
+          </h2>
+          <p class="why-choose-desc">
+            We are committed to making your loan journey simple, transparent and hassle-free with the right guidance and support.
+          </p>
+
+          <!-- 4 Feature Points (2x2 Grid) with Exact Custom SVG Icons -->
+          <div class="why-features-grid">
+            <!-- Feature 1: Personalised Guidance -->
+            <div class="why-feature-box">
+              <div class="why-feature-icon-circle">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#00A884" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/>
+                  <path d="M12 7c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5z"/>
+                  <circle cx="12" cy="12" r="1.5" fill="#00A884"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="why-feature-title">Personalised Guidance</h4>
+                <p class="why-feature-text">Tailored loan solutions for your needs.</p>
+              </div>
+            </div>
+
+            <!-- Feature 2: Access to Multiple Lenders -->
+            <div class="why-feature-box">
+              <div class="why-feature-icon-circle">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#00A884" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="why-feature-title">Access to Multiple Lenders</h4>
+                <p class="why-feature-text">More options to find the right fit.</p>
+              </div>
+            </div>
+
+            <!-- Feature 3: Simple Documentation -->
+            <div class="why-feature-box">
+              <div class="why-feature-icon-circle">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#00A884" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                  <polyline points="10 9 9 9 8 9"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="why-feature-title">Simple Documentation</h4>
+                <p class="why-feature-text">Hassle-free process with expert support.</p>
+              </div>
+            </div>
+
+            <!-- Feature 4: Transparent Communication -->
+            <div class="why-feature-box">
+              <div class="why-feature-icon-circle">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#00A884" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  <polyline points="9 10 11 12 15 8"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="why-feature-title">Transparent Communication</h4>
+                <p class="why-feature-text">Clear information at every step.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Column (Organic S-Curve Masked Photo + Script + Floating Badge) -->
+        <div class="why-choose-visual-col">
+          <div class="why-photo-container">
+            <img src="assets/images/Joyful Family Moment in a Sunlit Living Room.png" alt="Finora - Building Better Futures Family" class="why-family-photo">
+            
+            <!-- "Building Better Futures" Cursive Script Overlay -->
+            <div class="why-script-overlay">
+              <span>Building</span>
+              <span>Better</span>
+              <span>Futures</span>
+              <!-- Hand-drawn SVG underline curve with arrow -->
+              <svg class="script-swoosh" viewBox="0 0 120 22" fill="none">
+                <path d="M4,13 C35,19 75,5 112,13" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M104,7 L114,13 L106,18" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <!-- Floating "1000+ Happy Customers" Badge -->
+            <div class="why-floating-badge">
+              <div class="badge-avatar-wrap">
+                <img src="assets/images/testimonial-avatar.png" alt="Happy Customer">
+              </div>
+              <div class="badge-info-wrap">
+                <span class="badge-number">1000+</span>
+                <span class="badge-label">Happy Customers</span>
+              </div>
+              <button type="button" class="badge-plus-btn" aria-label="View more customer testimonials">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. FOURTH SECTION: HOW IT WORKS (EXACT 4-STEP PROCESS ROADMAP)
+       ========================================================================== -->
+  <section id="how-it-works" class="finora-how-it-works-section">
+    <div class="site-container">
+      <!-- Section Header -->
+      <div class="how-works-header">
+        <span class="finora-pill-badge">HOW IT WORKS</span>
+        <h2 class="how-works-title">A Simple 4 Step Process</h2>
+        <p class="how-works-subtitle">From enquiry to loan disbursal, we make it easy and transparent.</p>
+      </div>
+
+      <!-- 4 Steps Flow with Extending Dotted Connectors -->
+      <div class="how-steps-flow">
+        <!-- Step 1 -->
+        <div class="how-step-col">
+          <div class="how-step-icon-wrap">
+            <div class="how-step-icon-bubble">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#00A884" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+          </div>
+          <div class="how-step-title-line">
+            <span class="how-step-number">01</span>
+            <h3 class="how-step-heading">Submit Enquiry</h3>
+          </div>
+          <p class="how-step-desc">Tell us your requirement through a simple form.</p>
+        </div>
+
+        <!-- Connector 1 -->
+        <div class="how-step-arrow-wrap" aria-hidden="true">
+          <div class="how-step-arrow-line"></div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="how-step-col">
+          <div class="how-step-icon-wrap">
+            <div class="how-step-icon-bubble">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#00A884" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                <circle cx="8" cy="10" r="1.2" fill="#00A884"/>
+                <circle cx="12" cy="10" r="1.2" fill="#00A884"/>
+                <circle cx="16" cy="10" r="1.2" fill="#00A884"/>
+              </svg>
+            </div>
+          </div>
+          <div class="how-step-title-line">
+            <span class="how-step-number">02</span>
+            <h3 class="how-step-heading">Expert Discussion</h3>
+          </div>
+          <p class="how-step-desc">Our team will understand your needs and guide you on the best options.</p>
+        </div>
+
+        <!-- Connector 2 -->
+        <div class="how-step-arrow-wrap" aria-hidden="true">
+          <div class="how-step-arrow-line"></div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="how-step-col">
+          <div class="how-step-icon-wrap">
+            <div class="how-step-icon-bubble">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#00A884" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <circle cx="12" cy="14" r="3.2"/>
+                <path d="M12 17.2v2.8m-2-1.4h4"/>
+              </svg>
+            </div>
+          </div>
+          <div class="how-step-title-line">
+            <span class="how-step-number">03</span>
+            <h3 class="how-step-heading">Documentation</h3>
+          </div>
+          <p class="how-step-desc">Get assistance with the required documents.</p>
+        </div>
+
+        <!-- Connector 3 -->
+        <div class="how-step-arrow-wrap" aria-hidden="true">
+          <div class="how-step-arrow-line"></div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="how-step-col">
+          <div class="how-step-icon-wrap">
+            <div class="how-step-icon-bubble">
+              <!-- Exact Circle with Checkmark SVG from Reference -->
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#00A884" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9.5"/>
+                <polyline points="8 12 10.8 15 16 9"/>
+              </svg>
+            </div>
+          </div>
+          <div class="how-step-title-line">
+            <span class="how-step-number">04</span>
+            <h3 class="how-step-heading">Lender Assessment</h3>
+          </div>
+          <p class="how-step-desc">Your application is forwarded to the right lender for evaluation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. FIFTH SECTION: PLAN BETTER (EXACT LOAN EMI CALCULATOR)
+       ========================================================================== -->
+  <section id="emi-calculator" class="finora-calculator-section">
+    <div class="site-container">
+      <!-- Section Header (Left-Aligned as in Reference) -->
+      <div class="calc-section-header">
+        <span class="finora-pill-badge">PLAN BETTER</span>
+        <h2 class="calc-section-title">Loan EMI Calculator</h2>
+        <p class="calc-section-subtitle">Get an estimate of your monthly EMI and plan your finances better.</p>
+      </div>
+
+      <!-- Main Calculator Grid -->
+      <div class="calculator-main-grid">
+        <!-- Left: 3-Column Inputs White Card (Compact Height) -->
+        <div class="calculator-inputs-card">
+          <!-- Column 1: Loan Amount -->
+          <div class="calc-input-col">
+            <label class="calc-col-label" for="loanAmountRange">Loan Amount</label>
+            <div class="calc-input-box">
+              <input type="text" id="loanAmountInput" class="calc-input-field" value="₹ 50,00,000" readonly>
+            </div>
+            <input type="range" id="loanAmountRange" class="calc-range-slider" min="500000" max="50000000" step="50000" value="5000000">
+            <div class="calc-scale-labels">
+              <span>| ₹ 5 Lakh</span>
+              <span>₹ 5 Crore |</span>
+            </div>
+          </div>
+
+          <!-- Vertical Divider -->
+          <div class="calc-vertical-separator"></div>
+
+          <!-- Column 2: Interest Rate -->
+          <div class="calc-input-col">
+            <label class="calc-col-label" for="interestRateRange">Interest Rate (p.a.)</label>
+            <div class="calc-input-box">
+              <input type="text" id="interestRateInput" class="calc-input-field" value="8.5%" readonly>
+            </div>
+            <input type="range" id="interestRateRange" class="calc-range-slider" min="0" max="15" step="0.1" value="8.5">
+            <div class="calc-scale-labels">
+              <span>| 0%</span>
+              <span>15% |</span>
+            </div>
+          </div>
+
+          <!-- Vertical Divider -->
+          <div class="calc-vertical-separator"></div>
+
+          <!-- Column 3: Loan Tenure -->
+          <div class="calc-input-col">
+            <label class="calc-col-label" for="loanTenureRange">Loan Tenure</label>
+            <div class="calc-input-box">
+              <input type="text" id="loanTenureInput" class="calc-input-field" value="20 Years" readonly>
+            </div>
+            <input type="range" id="loanTenureRange" class="calc-range-slider" min="5" max="30" step="1" value="20">
+            <div class="calc-scale-labels">
+              <span>| 5 Years</span>
+              <span>30 Years |</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Visual Composite (Villa Photo Landscape + Script + Floating Navy Summary Card) -->
+        <div class="calculator-visual-side">
+          <!-- Twilight Villa Container (Landscape aspect framing) -->
+          <div class="calc-villa-container">
+            <img src="assets/images/home page/Twilight Modern Mansion with Lush Landscaping.png" alt="Finora - Plan Today Own Tomorrow" class="calc-villa-image">
+            
+            <!-- "Plan Today Own Tomorrow" Script Overlay -->
+            <div class="calc-script-overlay">
+              <div class="calc-script-text">
+                <span>Plan Today</span>
+                <span>Own Tomorrow</span>
+              </div>
+              <!-- Curved hand-drawn arrow pointing to villa roof -->
+              <svg class="calc-script-arrow-svg" viewBox="0 0 45 45" fill="none">
+                <path d="M 12,6 C 24,12 36,20 28,38" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round"/>
+                <path d="M 21,34 L 28,39 L 34,31" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Floating Dark Navy Summary Card (Overlaps Left of Villa) -->
+          <div class="calc-floating-summary-card">
+            <div class="calc-summary-label">Estimated Monthly EMI</div>
+            <div class="calc-summary-emi-val" id="calcEmiValue">₹ 43,391</div>
+            <div class="calc-summary-divider"></div>
+            
+            <div class="calc-summary-breakdown">
+              <div class="calc-summary-subcol">
+                <span class="calc-subcol-title">Total Interest</span>
+                <span class="calc-subcol-amount" id="calcInterestValue">₹ 54,13,840</span>
+              </div>
+              <div class="calc-subcol-divider"></div>
+              <div class="calc-summary-subcol">
+                <span class="calc-subcol-title">Total Repayment</span>
+                <span class="calc-subcol-amount" id="calcRepaymentValue">₹ 1,04,13,840</span>
+              </div>
+            </div>
+
+            <a href="#consultation" class="calc-summary-cta js-open-consultation-modal">
+              <span>Get Free Consultation</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. SIXTH SECTION: TESTIMONIALS (EXACT REFERENCE 2-CARD DISPLAY)
+       ========================================================================== -->
+  <section class="finora-testimonials-section">
+    <div class="site-container">
+      <div class="testimonials-main-layout">
+        <!-- Left Header & Nav Controls -->
+        <div class="testimonials-header-col">
+          <span class="finora-pill-badge">TESTIMONIALS</span>
+          <h2 class="testimonials-main-title">What Our Customers Say</h2>
+          <p class="testimonials-subtitle">Real stories from people who achieved their goals with us.</p>
+          <div class="testimonials-carousel-nav">
+            <button class="t-nav-btn t-prev-btn" aria-label="Previous testimonial">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button class="t-nav-btn t-next-btn" aria-label="Next testimonial">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right 2 Testimonial Cards -->
+        <div class="testimonials-cards-grid">
+          <!-- Card 1: Arun Kumar -->
+          <div class="testimonial-bubble-card">
+            <div class="testimonial-stars-row">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="testimonial-card-body">
+              <div class="testimonial-avatar-wrap">
+                <img src="assets/images/home page/Loan Approval Consultation.png" alt="Arun Kumar" class="testimonial-avatar-img">
+              </div>
+              <div class="testimonial-quote-wrap">
+                <p class="testimonial-quote-text">
+                  "The team made my home loan process very simple and easy. Highly professional and supportive throughout."
+                </p>
+                <div class="testimonial-author-row">
+                  <h4 class="testimonial-author-name">Arun Kumar</h4>
+                  <span class="testimonial-loan-type">Home Loan</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Priya Mehta -->
+          <div class="testimonial-bubble-card">
+            <div class="testimonial-stars-row">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="testimonial-card-body">
+              <div class="testimonial-avatar-wrap">
+                <img src="assets/images/home page/Warm Professional Portrait at Home.png" alt="Priya Mehta" class="testimonial-avatar-img">
+              </div>
+              <div class="testimonial-quote-wrap">
+                <p class="testimonial-quote-text">
+                  "Excellent service and clear guidance. They helped me choose the right loan option for my business."
+                </p>
+                <div class="testimonial-author-row">
+                  <h4 class="testimonial-author-name">Priya Mehta</h4>
+                  <span class="testimonial-loan-type">Business Loan</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. SEVENTH SECTION: CALL TO ACTION BANNER (READY TO TAKE THE NEXT STEP?)
+       ========================================================================== -->
+  <section class="finora-cta-section">
+    <div class="site-container">
+      <div class="finora-cta-banner">
+        <!-- Mountain Hiker Background Graphic / Photo -->
+        <div class="cta-bg-image-wrap">
+          <img src="assets/images/Triumphant Hiker Above Misty Mountain Lakes.png" alt="Ready to Take the Next Step" class="cta-bg-photo">
+        </div>
+
+        <!-- Left Content -->
+        <div class="cta-content-col">
+          <h2 class="cta-title">Ready to Take the Next Step?</h2>
+          <p class="cta-subtitle">Get expert guidance and find the right loan solution for your needs.</p>
+          
+          <div class="cta-buttons-row">
+            <a href="#consultation" class="btn-cta-expert js-open-consultation-modal">
+              <span>Talk to Our Expert</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-cta-whatsapp">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Script Overlay: "Your Goals Our Support" -->
+        <div class="cta-script-col">
+          <div class="cta-script-text">
+            <span>Your</span>
+            <span>Goals</span>
+            <span>Our Support</span>
+          </div>
+          <!-- Hand-drawn vector swoosh arrow pointing right -->
+          <svg class="cta-script-swoosh" viewBox="0 0 100 24" fill="none">
+            <path d="M 4,14 C 30,22 65,8 94,14" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M 88,8 L 96,14 L 89,19" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. EIGHTH SECTION: FINORA FOOTER (CLEAN WHITE 4-COLUMN DESIGN)
+       ========================================================================== -->
+  <footer id="contact" class="finora-footer-white">
+    <div class="site-container">
+      <div class="footer-grid-four-col">
+        <!-- Column 1: Brand Info -->
+        <div class="footer-col-brand">
+          <a href="#" class="brand-link">
+            <img src="assets/images/finora-logo.svg" alt="Finora - Finance Made Simpler" class="footer-brand-logo">
+          </a>
+          <p class="footer-brand-desc">
+            Your trusted partner for home loans, business loans, personal loans and more. We help you find the right loan solutions with expert guidance and a simple process.
+          </p>
+          <div class="footer-social-circles">
+            <a href="#" class="social-circle facebook" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-circle instagram" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="social-circle linkedin" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social-circle youtube" aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col-links">
+          <h4 class="footer-links-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#services">Loan Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#emi-calculator">EMI Calculator</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Our Loan Services -->
+        <div class="footer-col-links">
+          <h4 class="footer-links-title">Our Loan Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="#services">Home Loan</a></li>
+            <li><a href="#services">Loan Against Property</a></li>
+            <li><a href="#services">Business Loan</a></li>
+            <li><a href="#services">Personal Loan</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact Info -->
+        <div class="footer-col-contact">
+          <h4 class="footer-links-title">Contact Info</h4>
+          
+          <div class="footer-info-item">
+            <i class="fa-solid fa-location-dot footer-info-icon"></i>
+            <span class="footer-info-text">
+              123, Business Street,<br>
+              Chennai, Tamil Nadu - 600001
+            </span>
+          </div>
+
+          <div class="footer-info-item">
+            <i class="fa-solid fa-phone footer-info-icon"></i>
+            <a href="tel:+919876543210" class="footer-info-link">+91 98765 43210</a>
+          </div>
+
+          <div class="footer-info-item">
+            <i class="fa-solid fa-envelope footer-info-icon"></i>
+            <a href="mailto:info@finora.in" class="footer-info-link">info@finora.in</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Back to Top Floating Button -->
+      <div class="footer-back-to-top-wrap">
+        <button type="button" class="btn-back-to-top js-scroll-to-top" aria-label="Scroll back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
+      </div>
+
+      <!-- Footer Bottom Copyright & Legal Links -->
+      <div class="footer-bottom-legal-row">
+        <p class="copyright-text">&copy; 2024 Finora. All Rights Reserved.</p>
+        <div class="legal-links-list">
+          <a href="#">Privacy Policy</a>
+          <span class="legal-sep">|</span>
+          <a href="#">Terms &amp; Conditions</a>
+          <span class="legal-sep">|</span>
+          <a href="#">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       8. MODAL OVERLAY: FREE CONSULTATION
+       ========================================================================== -->
+  <div class="modal-overlay-finora" id="consultationModal">
+    <div class="modal-content-box">
+      <button class="modal-close-icon js-close-modal" aria-label="Close dialog">&times;</button>
+      <h3 style="font-size: 1.4rem; font-weight: 800; color: #0A2540; margin-bottom: 6px;">Get a Free Consultation</h3>
+      <p style="font-size: 0.875rem; color: #64748B; margin-bottom: 20px;">
+        Leave your contact details and our senior financial consultant will assist you.
+      </p>
+
+      <form onsubmit="event.preventDefault(); alert('Thank you! Your enquiry has been received.'); document.getElementById('consultationModal').classList.remove('active');">
+        <div style="margin-bottom: 14px;">
+          <label style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0A2540; margin-bottom: 4px;">Full Name</label>
+          <input type="text" required placeholder="John Doe" style="width: 100%; padding: 11px 14px; border: 1px solid #CBD5E1; border-radius: 10px; font-size: 0.9375rem; outline: none;">
+        </div>
+
+        <div style="margin-bottom: 14px;">
+          <label style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0A2540; margin-bottom: 4px;">Mobile Number</label>
+          <input type="tel" required placeholder="+91 98765 00000" style="width: 100%; padding: 11px 14px; border: 1px solid #CBD5E1; border-radius: 10px; font-size: 0.9375rem; outline: none;">
+        </div>
+
+        <div style="margin-bottom: 18px;">
+          <label style="display: block; font-size: 0.8125rem; font-weight: 700; color: #0A2540; margin-bottom: 4px;">Loan Type</label>
+          <select style="width: 100%; padding: 11px 14px; border: 1px solid #CBD5E1; border-radius: 10px; font-size: 0.9375rem; outline: none;">
+            <option>Home Loan</option>
+            <option>Loan Against Property</option>
+            <option>Business Loan</option>
+            <option>Personal Loan</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-teal-pill" style="width: 100%; justify-content: center; padding: 13px;">
+          <span>Submit Request</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       9. MODAL OVERLAY: VIDEO PREVIEW
+       ========================================================================== -->
+  <div class="modal-overlay-finora" id="videoModal">
+    <div class="modal-content-box" style="max-width: 680px; padding: 24px;">
+      <button class="modal-close-icon js-close-modal" aria-label="Close video">&times;</button>
+      <h3 style="font-size: 1.25rem; font-weight: 800; color: #0A2540; margin-bottom: 16px;">Watch How Finora Works</h3>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; background: #0A2540; display: flex; align-items: center; justify-content: center;">
+        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #FFFFFF; text-align: center; padding: 20px;">
+          <div style="width: 64px; height: 64px; border-radius: 50%; background: #00A884; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 14px; box-shadow: 0 8px 24px rgba(0,168,132,0.4);">
+            <i class="fa-solid fa-play" style="margin-left: 4px;"></i>
+          </div>
+          <h4 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 6px;">How Finora Simplifies Loans</h4>
+          <p style="font-size: 0.875rem; color: #94A3B8; max-width: 440px;">
+            In under 60 seconds, see how we connect you with 10+ top lending banks to secure your dream loan at the lowest interest rate.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

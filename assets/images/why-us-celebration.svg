@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-why-us-celebration" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="100%" stop-color="#FDE68A"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" fill="url(#grad-why-us-celebration)" />
+  <g opacity="0.15">
+    <circle cx="400" cy="100" r="200" fill="#FFFFFF"/>
+    <circle cx="50" cy="425" r="150" fill="#FFFFFF"/>
+  </g>
+  <circle cx="250" cy="220" r="45" fill="#D97706"/>
+           <path d="M170 360 C170 300 330 300 330 360 Z" fill="#B45309"/>
+           <polygon points="250,120 260,145 285,145 265,160 272,185 250,170 228,185 235,160 215,145 240,145" fill="#F59E0B"/>
+  <text x="250" y="420" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="700" font-size="23" fill="#FFFFFF" text-anchor="middle" filter="drop-shadow(0px 2px 4px rgba(0,0,0,0.4))">
+    Celebration of Loan Approval
+  </text>
+  <text x="250" y="452" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="500" font-size="14" fill="#E0F2FE" text-anchor="middle" opacity="0.9">
+    Aspect Ratio 1:1 • Polaroid Snapshot
+  </text>
+</svg>

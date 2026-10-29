@@ -1,0 +1,2190 @@
+/* ==========================================================================
+   FINORA - FINANCE MADE SIMPLER
+   Exact Implementation of the Finora Loan Platform Reference
+   ========================================================================== */
+
+:root {
+  /* Finora Color Palette */
+  --finora-teal: #00A884;
+  --finora-teal-dark: #00896C;
+  --finora-teal-light: #EBF7F5;
+  --finora-teal-soft: #F0FAF7;
+  --finora-navy: #0A2540;
+  --finora-navy-light: #1E3A5F;
+  --finora-text: #334155;
+  --finora-muted: #64748B;
+  --finora-light: #94A3B8;
+  --finora-bg: #FFFFFF;
+  --finora-bg-alt: #F8FAFC;
+  --finora-border: #E2E8F0;
+  --finora-border-input: #E2E8F0;
+  --finora-input-bg: #F8FAFC;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-script: 'Caveat', cursive;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 6px rgba(10, 37, 64, 0.04);
+  --shadow-md: 0 10px 25px -5px rgba(10, 37, 64, 0.08);
+  --shadow-card: 0 20px 45px -10px rgba(10, 37, 64, 0.12), 0 8px 16px -6px rgba(10, 37, 64, 0.04);
+  --shadow-pill: 0 14px 30px -8px rgba(0, 168, 132, 0.25);
+  --shadow-card-hover: 0 20px 35px -8px rgba(10, 37, 64, 0.1), 0 8px 15px -4px rgba(10, 37, 64, 0.05);
+
+  /* Radius */
+  --radius-pill: 9999px;
+  --radius-card: 20px;
+  --radius-input: 12px;
+}
+
+/* Global Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--finora-bg);
+  color: var(--finora-text);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Container */
+.site-container {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* ==========================================================================
+   NAVBAR (FINORA EXACT)
+   ========================================================================== */
+.finora-navbar {
+  background: #FFFFFF;
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 14px rgba(10, 37, 64, 0.04);
+  transition: all 0.3s ease;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand-logo-img {
+  height: 44px;
+  width: auto;
+}
+
+.nav-links-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 28px;
+}
+
+.nav-item-link {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--finora-navy);
+  text-decoration: none;
+  position: relative;
+  padding: 8px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s ease;
+}
+
+.nav-item-link:hover {
+  color: var(--finora-teal);
+}
+
+.nav-item-link.active {
+  color: var(--finora-teal);
+}
+
+.nav-item-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--finora-teal);
+  border-radius: var(--radius-pill);
+}
+
+.nav-dropdown-icon {
+  font-size: 0.75rem;
+  transition: transform 0.2s;
+}
+
+.nav-item-link:hover .nav-dropdown-icon {
+  transform: translateY(2px);
+}
+
+.nav-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.expert-call-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.call-icon-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--finora-teal);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 168, 132, 0.25);
+  transition: transform 0.2s;
+}
+
+.expert-call-box:hover .call-icon-circle {
+  transform: scale(1.08);
+}
+
+.call-text-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-number {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: var(--finora-navy);
+  line-height: 1.2;
+}
+
+.phone-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--finora-muted);
+}
+
+.btn-teal-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--finora-teal);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-pill);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-teal-pill:hover {
+  background-color: var(--finora-teal-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 35px -8px rgba(0, 168, 132, 0.35);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--finora-navy);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   HERO SECTION (FINORA EXACT WITH SWEEPING BOTTOM CURVE)
+   ========================================================================== */
+.finora-hero {
+  position: relative;
+  padding: 50px 0 120px 0;
+  background: radial-gradient(circle at 10% 20%, #F0FAF7 0%, #FFFFFF 55%);
+  overflow: hidden;
+}
+
+/* Hero Background Composite (Modern House + Smiling Couple) */
+.hero-backdrop-graphic {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 60%;
+  background-image: url('../images/hero-homeowner.png');
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 18%, black 45%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 18%, black 45%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-backdrop-graphic::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.25) 100%);
+}
+
+.hero-grid-wrapper {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Left Content Area */
+.hero-content-col {
+  max-width: 620px;
+}
+
+.eyebrow-tag {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: var(--finora-teal);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.hero-title {
+  font-size: 3.85rem;
+  font-weight: 800;
+  line-height: 1.08;
+  color: var(--finora-navy);
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+.hero-title-highlight {
+  color: var(--finora-teal);
+  display: block;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  color: var(--finora-text);
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 540px;
+}
+
+/* 3 Feature Pills Row */
+.hero-features-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.feature-pill-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.feature-icon-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--finora-teal-light);
+  color: var(--finora-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.feature-pill-text {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--finora-navy);
+}
+
+/* CTA & Video Trigger Row */
+.hero-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.video-trigger-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.video-play-bubble {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  color: var(--finora-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: 0 8px 20px rgba(10, 37, 64, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding-left: 3px;
+}
+
+.video-trigger-btn:hover .video-play-bubble {
+  transform: scale(1.12);
+  box-shadow: 0 12px 25px rgba(0, 168, 132, 0.25);
+}
+
+.video-text-meta {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.video-title {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: var(--finora-navy);
+}
+
+.video-subtitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--finora-muted);
+}
+
+/* ==========================================================================
+   RIGHT FLOATING CONSULTATION CARD (FINORA EXACT)
+   ========================================================================== */
+.consultation-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-card);
+  padding: 32px 30px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  max-width: 420px;
+  margin-left: auto;
+  position: relative;
+  z-index: 10;
+}
+
+.consultation-card-header {
+  margin-bottom: 22px;
+}
+
+.card-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--finora-navy);
+  line-height: 1.2;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.card-subtitle {
+  font-size: 0.875rem;
+  color: var(--finora-muted);
+  line-height: 1.45;
+}
+
+.consultation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.input-field-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  color: var(--finora-light);
+  font-size: 0.95rem;
+  pointer-events: none;
+  transition: color 0.2s;
+}
+
+.form-control-input {
+  width: 100%;
+  padding: 13px 16px 13px 44px;
+  border-radius: var(--radius-input);
+  border: 1px solid var(--finora-border-input);
+  background: var(--finora-input-bg);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--finora-navy);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-control-input::placeholder {
+  color: var(--finora-muted);
+  font-weight: 500;
+}
+
+.form-control-input:focus {
+  border-color: var(--finora-teal);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(0, 168, 132, 0.12);
+}
+
+.input-field-group:focus-within .input-icon {
+  color: var(--finora-teal);
+}
+
+select.form-control-input {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 14px;
+  padding-right: 38px;
+}
+
+.btn-submit-enquiry {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--finora-teal);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 14px 20px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-pill);
+  transition: all 0.25s ease;
+  margin-top: 6px;
+  width: 100%;
+}
+
+.btn-submit-enquiry:hover {
+  background-color: var(--finora-teal-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 30px -8px rgba(0, 168, 132, 0.4);
+}
+
+.privacy-badge-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--finora-muted);
+  margin-top: 10px;
+  line-height: 1.35;
+}
+
+.privacy-badge-note i {
+  color: var(--finora-teal);
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   HERO BOTTOM CURVE & STATS PILL (EXACT CURVE MATCH)
+   ========================================================================== */
+.hero-bottom-curve-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.hero-bottom-curve-wrap svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 95px;
+}
+
+/* Stats Pill Positioned Overlapping Curve */
+.hero-bottom-stats-bar {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  transform: translateY(32px);
+}
+
+.stats-pill-container {
+  background: #FFFFFF;
+  border-radius: var(--radius-pill);
+  padding: 14px 38px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  display: inline-flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.stat-metric-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--finora-teal-light);
+  color: var(--finora-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.stat-label-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.stat-val-bold {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--finora-navy);
+}
+
+.stat-desc-text {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--finora-muted);
+}
+
+/* ==========================================================================
+   SECOND SECTION: LOAN SERVICES (EXACT 4-CARD REFERENCE MATCH)
+   ========================================================================== */
+.services-section {
+  padding: 80px 0 60px 0;
+  background-color: #FFFFFF;
+  position: relative;
+  z-index: 5;
+}
+
+.services-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.services-badge-pill {
+  display: inline-block;
+  padding: 6px 16px;
+  background-color: var(--finora-teal-light);
+  color: var(--finora-teal);
+  font-size: 0.75rem;
+  font-weight: 800;
+  border-radius: var(--radius-pill);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.services-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--finora-navy);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.services-subtitle {
+  font-size: 1rem;
+  color: var(--finora-muted);
+  line-height: 1.5;
+}
+
+.btn-view-all-services {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--finora-border);
+  background: #FFFFFF;
+  color: var(--finora-navy);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(10, 37, 64, 0.03);
+}
+
+.btn-view-all-services:hover {
+  border-color: var(--finora-teal);
+  color: var(--finora-teal);
+  transform: translateX(3px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* 4-Card Grid */
+.finora-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Individual Card */
+.finora-service-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid #EEF2F6;
+  box-shadow: 0 6px 18px -4px rgba(10, 37, 64, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.finora-service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(0, 168, 132, 0.25);
+}
+
+/* Card Top Media with Wave Curve */
+.card-media-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10.5;
+  overflow: hidden;
+  background-color: #E2E8F0;
+}
+
+.card-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.finora-service-card:hover .card-media-img {
+  transform: scale(1.06);
+}
+
+/* Curved wave mask at the bottom of the card image */
+.card-bottom-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 38px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Overlapping Circular Icon Bubble */
+.card-icon-bubble {
+  position: absolute;
+  bottom: 8px;
+  left: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--finora-teal);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 12px rgba(0, 168, 132, 0.35);
+  border: 3.5px solid #FFFFFF;
+  z-index: 5;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.finora-service-card:hover .card-icon-bubble {
+  transform: scale(1.12);
+  background-color: var(--finora-teal-dark);
+}
+
+/* Card Body Content */
+.card-content-body {
+  padding: 18px 22px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-heading {
+  font-size: 1.1875rem;
+  font-weight: 800;
+  color: var(--finora-navy);
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+.card-text {
+  font-size: 0.875rem;
+  color: var(--finora-muted);
+  line-height: 1.55;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.card-learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--finora-teal);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-top: auto;
+}
+
+.card-learn-more:hover {
+  color: var(--finora-teal-dark);
+  gap: 10px;
+}
+
+/* ==========================================================================
+   THIRD SECTION: WHY CHOOSE FINORA (EXACT DESIGN REDESIGN IN CODE)
+   ========================================================================== */
+.why-choose-finora-section {
+  padding: 30px 0 70px 0;
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+/* Large Full-Width Card Banner */
+.why-choose-card-banner {
+  background: #FFFFFF;
+  background-image: radial-gradient(ellipse at 15% 45%, rgba(220, 248, 242, 0.7) 0%, rgba(240, 250, 247, 0.45) 45%, rgba(255, 255, 255, 0) 75%);
+  border-radius: 36px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 16px 45px -10px rgba(10, 37, 64, 0.07);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+}
+
+/* Left Content Column */
+.why-choose-content-col {
+  padding: 60px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.why-choose-badge {
+  display: inline-block;
+  padding: 6px 18px;
+  background-color: #E2F5F1;
+  color: var(--finora-teal);
+  font-size: 0.75rem;
+  font-weight: 800;
+  border-radius: var(--radius-pill);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  align-self: flex-start;
+}
+
+.why-choose-heading {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--finora-navy);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: 14px;
+}
+
+.why-choose-heading-green {
+  color: var(--finora-teal);
+  display: block;
+}
+
+.why-choose-desc {
+  font-size: 1.05rem;
+  color: var(--finora-muted);
+  line-height: 1.6;
+  margin-bottom: 38px;
+  max-width: 530px;
+}
+
+/* 4 Feature Points (2x2 Grid) */
+.why-features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 24px;
+}
+
+.why-feature-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.why-feature-icon-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: #E6F7F3;
+  color: var(--finora-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 168, 132, 0.12);
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.why-feature-box:hover .why-feature-icon-circle {
+  transform: scale(1.08);
+  background-color: #D1EFE8;
+}
+
+.why-feature-title {
+  font-size: 1.0625rem;
+  font-weight: 800;
+  color: var(--finora-navy);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.why-feature-text {
+  font-size: 0.84rem;
+  color: var(--finora-muted);
+  line-height: 1.45;
+}
+
+/* Right Visual Column (Organic S-Curve Masked Frame) */
+.why-choose-visual-col {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.why-photo-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  overflow: hidden;
+  clip-path: url(#whyCurveMask);
+  -webkit-clip-path: url(#whyCurveMask);
+  background-color: #E2E8F0;
+}
+
+.why-family-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+  display: block;
+}
+
+/* "Building Better Futures" Cursive Script Overlay */
+.why-script-overlay {
+  position: absolute;
+  top: 50px;
+  left: 36px;
+  z-index: 10;
+  color: #FFFFFF;
+  font-family: var(--font-script);
+  font-size: 2.35rem;
+  line-height: 0.95;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  transform: rotate(-6deg);
+  text-shadow: 0 2px 10px rgba(10, 37, 64, 0.4);
+  pointer-events: none;
+}
+
+.script-swoosh {
+  width: 120px;
+  height: 24px;
+  margin-top: 4px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+/* Floating "1000+ Happy Customers" Badge */
+.why-floating-badge {
+  position: absolute;
+  bottom: 32px;
+  right: 36px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 12px 20px;
+  box-shadow: 0 14px 35px rgba(10, 37, 64, 0.16);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 12;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.badge-avatar-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #E2E8F0;
+  flex-shrink: 0;
+}
+
+.badge-avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge-info-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-number {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--finora-navy);
+  line-height: 1.1;
+}
+
+.badge-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--finora-muted);
+}
+
+.badge-plus-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: var(--finora-teal);
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.badge-plus-btn:hover {
+  background-color: var(--finora-teal-dark);
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   HOW IT WORKS (EXACT REFERENCE 4-STEP ROADMAP)
+   ========================================================================== */
+.finora-how-it-works-section {
+  padding: 60px 0 45px 0;
+  background: #FFFFFF;
+}
+
+.how-works-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 40px auto;
+}
+
+.finora-pill-badge {
+  display: inline-block;
+  background: rgba(0, 168, 132, 0.12);
+  color: var(--finora-teal);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 30px;
+  margin-bottom: 12px;
+}
+
+.how-works-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--finora-navy);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.how-works-subtitle {
+  font-size: 0.9375rem;
+  color: var(--finora-muted);
+  line-height: 1.5;
+}
+
+/* 4 Steps Row Flow with Responsive Dotted Connectors */
+.how-steps-flow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  gap: 12px;
+}
+
+.how-step-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.how-step-icon-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.how-step-icon-bubble {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #EBF8F5;
+  border: 1.5px solid #A4E2D6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.how-step-col:hover .how-step-icon-bubble {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 168, 132, 0.2);
+}
+
+.how-step-title-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.how-step-number {
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  border-radius: 50%;
+  background: var(--finora-teal);
+  color: #FFFFFF;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.how-step-heading {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--finora-navy);
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Horizontal dotted connector arrow stretching between titles */
+.how-step-arrow-wrap {
+  flex: 1;
+  min-width: 24px;
+  max-width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 85px; /* Aligned with title line */
+}
+
+.how-step-arrow-line {
+  width: 100%;
+  height: 0;
+  border-top: 2px dotted #00A884;
+  position: relative;
+}
+
+.how-step-arrow-line::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: -4.5px;
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid #00A884;
+  border-right: 2px solid #00A884;
+  transform: rotate(45deg);
+}
+
+.how-step-desc {
+  font-size: 0.84rem;
+  color: var(--finora-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==========================================================================
+   PLAN BETTER (LOAN EMI CALCULATOR - EXACT REFERENCE MATCH)
+   ========================================================================== */
+.finora-calculator-section {
+  padding: 30px 0 60px 0;
+  background: #FFFFFF;
+}
+
+.calc-section-header {
+  margin-bottom: 24px;
+}
+
+.calc-section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--finora-navy);
+  margin-top: 10px;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.calc-section-subtitle {
+  font-size: 0.9375rem;
+  color: var(--finora-muted);
+}
+
+/* Calculator Grid: Left Inputs Card, Right Visual */
+.calculator-main-grid {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+/* Left: Compact 3-Column White Card */
+.calculator-inputs-card {
+  flex: 1.18;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 24px 26px;
+  box-shadow: 0 8px 25px rgba(10, 37, 64, 0.04);
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.calc-input-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calc-col-label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--finora-navy);
+  margin-bottom: 10px;
+}
+
+.calc-input-box {
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 10px;
+  padding: 9px 12px;
+  margin-bottom: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.calc-input-box:focus-within {
+  border-color: var(--finora-teal);
+  box-shadow: 0 0 0 3px rgba(0, 168, 132, 0.15);
+}
+
+.calc-input-field {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--finora-navy);
+}
+
+/* Custom Range Slider */
+.calc-range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 3px;
+  background: #E2E8F0;
+  outline: none;
+  cursor: pointer;
+  margin: 6px 0;
+}
+
+.calc-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--finora-teal);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 168, 132, 0.4);
+  transition: transform 0.15s;
+}
+
+.calc-range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.calc-range-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--finora-teal);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 168, 132, 0.4);
+}
+
+.calc-scale-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: #94A3B8;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.calc-vertical-separator {
+  width: 1px;
+  background: #E2E8F0;
+  margin: 4px 0;
+}
+
+/* Right: Visual Composite (Villa Photo Landscape + Script + Floating Navy Card) */
+.calculator-visual-side {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 250px;
+}
+
+.calc-villa-container {
+  width: 100%;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(10, 37, 64, 0.08);
+}
+
+.calc-villa-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%; /* Clean landscape framing of the glowing luxury villa */
+  display: block;
+}
+
+/* "Plan Today Own Tomorrow" Script Overlay */
+.calc-script-overlay {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: none;
+}
+
+.calc-script-text {
+  font-family: var(--font-script);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.05;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+.calc-script-arrow-svg {
+  width: 38px;
+  height: 38px;
+  margin-top: 2px;
+  margin-right: 6px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+.calc-script-arrow-svg path {
+  stroke: #FFFFFF;
+}
+
+/* Floating Navy Summary Card */
+.calc-floating-summary-card {
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  background: #082038;
+  border-radius: 18px;
+  padding: 22px 20px;
+  color: #FFFFFF;
+  box-shadow: 0 15px 35px rgba(8, 32, 56, 0.4);
+  z-index: 5;
+}
+
+.calc-summary-label {
+  font-size: 0.8125rem;
+  color: #A0B7D1;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.calc-summary-emi-val {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
+
+.calc-summary-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin-bottom: 12px;
+}
+
+.calc-summary-breakdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.calc-summary-subcol {
+  flex: 1;
+}
+
+.calc-subcol-title {
+  display: block;
+  font-size: 0.72rem;
+  color: #94A3B8;
+  margin-bottom: 2px;
+}
+
+.calc-subcol-amount {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.calc-subcol-divider {
+  width: 1px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 0 8px;
+}
+
+.calc-summary-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--finora-teal);
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 11px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.25s, transform 0.2s;
+  box-shadow: 0 6px 16px rgba(0, 168, 132, 0.35);
+}
+
+.calc-summary-cta:hover {
+  background: #008F6F;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   6. TESTIMONIALS SECTION (WHAT OUR CUSTOMERS SAY - EXACT REFERENCE)
+   ========================================================================== */
+.finora-testimonials-section {
+  padding: 20px 0 75px 0;
+  background: #FFFFFF;
+}
+
+.testimonials-main-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 2.05fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.testimonials-header-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.testimonials-main-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--finora-navy);
+  margin-top: 10px;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.testimonials-subtitle {
+  font-size: 0.95rem;
+  color: var(--finora-muted);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.testimonials-carousel-nav {
+  display: flex;
+  gap: 12px;
+}
+
+.t-nav-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid #E2E8F0;
+  background: #FFFFFF;
+  color: var(--finora-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.t-nav-btn:hover {
+  background: var(--finora-teal);
+  color: #FFFFFF;
+  border-color: var(--finora-teal);
+}
+
+/* Testimonial Cards Grid */
+.testimonials-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.testimonial-bubble-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E9F0;
+  border-radius: 20px;
+  padding: 24px 22px;
+  box-shadow: 0 4px 20px rgba(10, 37, 64, 0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-stars-row {
+  display: flex;
+  gap: 4px;
+  color: #F59E0B;
+  font-size: 0.8125rem;
+  margin-bottom: 14px;
+  justify-content: flex-end;
+}
+
+.testimonial-card-body {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.testimonial-avatar-wrap {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.testimonial-quote-wrap {
+  flex: 1;
+}
+
+.testimonial-quote-text {
+  font-size: 0.84rem;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0 0 12px 0;
+}
+
+.testimonial-author-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-author-name {
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: var(--finora-navy);
+  margin: 0 0 2px 0;
+}
+
+.testimonial-loan-type {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--finora-teal);
+}
+
+/* ==========================================================================
+   7. CALL TO ACTION BANNER (READY TO TAKE THE NEXT STEP?)
+   ========================================================================== */
+.finora-cta-section {
+  padding: 10px 0 60px 0;
+  background: #FFFFFF;
+}
+
+.finora-cta-banner {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #06192E 0%, #0A2540 38%, rgba(10, 37, 64, 0.75) 65%, rgba(10, 37, 64, 0.25) 90%), #0A2540;
+  padding: 44px 48px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 16px 40px rgba(10, 37, 64, 0.1);
+}
+
+.cta-bg-image-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cta-bg-image-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #06192E 0%, #0A2540 38%, rgba(10, 37, 64, 0.78) 58%, rgba(10, 37, 64, 0.2) 82%, transparent 100%);
+  pointer-events: none;
+}
+
+.cta-bg-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  display: block;
+}
+
+.cta-content-col {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.cta-title {
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.02em;
+}
+
+.cta-subtitle {
+  font-size: 0.95rem;
+  color: #CBD5E1;
+  margin: 0 0 24px 0;
+  line-height: 1.5;
+}
+
+.cta-buttons-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-cta-expert {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--finora-teal);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  padding: 13px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+  box-shadow: 0 6px 16px rgba(0, 168, 132, 0.35);
+}
+
+.btn-cta-expert:hover {
+  background: #008F6F;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 168, 132, 0.45);
+}
+
+.btn-cta-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 12px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+
+.btn-cta-whatsapp i {
+  color: #25D366;
+  font-size: 1.2rem;
+}
+
+.btn-cta-whatsapp:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.cta-script-col {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 16px;
+  pointer-events: none;
+}
+
+.cta-script-text {
+  font-family: var(--font-script);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.05;
+  text-align: right;
+  transform: rotate(-3deg);
+  display: flex;
+  flex-direction: column;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+}
+
+.cta-script-swoosh {
+  width: 88px;
+  height: 22px;
+  margin-top: 4px;
+  margin-right: 8px;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+}
+
+/* ==========================================================================
+   8. FINORA WHITE FOOTER (EXACT 4-COLUMN DESIGN)
+   ========================================================================== */
+.finora-footer-white {
+  background: #FFFFFF;
+  padding-top: 50px;
+  padding-bottom: 24px;
+  border-top: 1px solid #F1F5F9;
+}
+
+.footer-grid-four-col {
+  display: grid;
+  grid-template-columns: 1.35fr 0.9fr 0.9fr 1.25fr;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-col-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-brand-logo {
+  height: 40px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.footer-brand-desc {
+  font-size: 0.875rem;
+  color: #64748B;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  max-width: 320px;
+}
+
+.footer-social-circles {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.social-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.social-circle.facebook {
+  background: #EFF6FF;
+  color: #1877F2;
+}
+
+.social-circle.instagram {
+  background: #FDF2F8;
+  color: #E1306C;
+}
+
+.social-circle.linkedin {
+  background: #F0F9FF;
+  color: #0A66C2;
+}
+
+.social-circle.youtube {
+  background: #FEF2F2;
+  color: #EF4444;
+}
+
+.social-circle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.footer-col-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--finora-navy);
+  margin: 0 0 16px 0;
+  letter-spacing: -0.01em;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links-list a {
+  color: #475569;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+
+.footer-links-list a:hover {
+  color: var(--finora-teal);
+}
+
+.footer-col-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 0.875rem;
+  color: #475569;
+}
+
+.footer-info-icon {
+  color: var(--finora-teal);
+  font-size: 1rem;
+  margin-top: 3px;
+}
+
+.footer-info-text {
+  line-height: 1.5;
+}
+
+.footer-info-link {
+  color: #475569;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-info-link:hover {
+  color: var(--finora-teal);
+}
+
+/* Floating Scroll Back to Top Button */
+.footer-back-to-top-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.btn-back-to-top {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--finora-teal);
+  color: #FFFFFF;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 168, 132, 0.35);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-back-to-top:hover {
+  background: #008F6F;
+  transform: translateY(-3px);
+}
+
+/* Footer Bottom Copyright & Legal Links */
+.footer-bottom-legal-row {
+  border-top: 1px solid #F1F5F9;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8125rem;
+  color: #94A3B8;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.copyright-text {
+  margin: 0;
+}
+
+.legal-links-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legal-links-list a {
+  color: #64748B;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.legal-links-list a:hover {
+  color: var(--finora-teal);
+}
+
+.legal-sep {
+  color: #CBD5E1;
+}
+
+/* ==========================================================================
+   MODAL OVERLAY (CONSULTATION & VIDEO)
+   ========================================================================== */
+.modal-overlay-finora {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 37, 64, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-overlay-finora.active {
+  display: flex;
+}
+
+.modal-content-box {
+  background: #FFFFFF;
+  border-radius: 24px;
+  max-width: 520px;
+  width: 100%;
+  padding: 32px;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  animation: modalIn 0.3s ease;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal-close-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--finora-muted);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   RESPONSIVE QUERIES
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .finora-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-grid-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero-backdrop-graphic {
+    opacity: 0.25;
+    width: 100%;
+  }
+  .consultation-card {
+    margin-left: 0;
+    max-width: 100%;
+  }
+  .why-choose-card-banner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .why-photo-container {
+    clip-path: none !important;
+    -webkit-clip-path: none !important;
+    min-height: 340px;
+  }
+  .calculator-main-grid {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+  .calculator-inputs-card {
+    width: 100%;
+  }
+  .calculator-visual-side {
+    width: 100%;
+  }
+  .calc-floating-summary-card {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 16px;
+  }
+  .how-steps-flow {
+    flex-wrap: wrap;
+    gap: 28px;
+  }
+  .how-step-col {
+    flex: 0 0 calc(50% - 14px);
+  }
+  .how-step-arrow-wrap {
+    display: none;
+  }
+  .testimonials-main-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .footer-grid-four-col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links-menu {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+  .expert-call-box {
+    display: none;
+  }
+  .hero-title {
+    font-size: 2.75rem;
+  }
+  .hero-features-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .services-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .why-choose-content-col {
+    padding: 36px 24px;
+  }
+  .why-choose-heading {
+    font-size: 2.1rem;
+  }
+  .why-features-grid {
+    grid-template-columns: 1fr;
+  }
+  .why-script-overlay {
+    font-size: 1.8rem;
+    top: 24px;
+    left: 24px;
+  }
+  .why-floating-badge {
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 14px;
+  }
+  .stats-pill-container {
+    flex-direction: column;
+    border-radius: 24px;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+  }
+  .finora-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .how-step-col {
+    flex: 0 0 100%;
+  }
+  .calculator-inputs-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    padding: 22px 18px;
+  }
+  .calc-vertical-separator {
+    width: 100%;
+    height: 1px;
+  }
+  .testimonials-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .finora-cta-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 36px 24px;
+  }
+  .cta-script-col {
+    align-items: flex-start;
+    padding-right: 0;
+  }
+  .footer-grid-four-col {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .footer-bottom-legal-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

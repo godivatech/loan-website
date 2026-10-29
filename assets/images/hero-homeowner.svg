@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-hero-homeowner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F4C47"/>
+      <stop offset="100%" stop-color="#166E67"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#grad-hero-homeowner)" />
+  <g opacity="0.15">
+    <circle cx="480" cy="160" r="240" fill="#FFFFFF"/>
+    <circle cx="60" cy="680" r="180" fill="#FFFFFF"/>
+  </g>
+  <path d="M250 480 L300 430 L350 480 V550 H250 Z" fill="#FFFFFF" opacity="0.9"/>
+           <path d="M285 550 V505 H315 V550" fill="#0F4C47"/>
+           <circle cx="300" cy="380" r="45" fill="#FF5B00" opacity="0.9"/>
+           <circle cx="300" cy="360" r="20" fill="#FFFFFF"/>
+           <path d="M275 410 C275 390 325 390 325 410" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+  <text x="300" y="720" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="700" font-size="27" fill="#FFFFFF" text-anchor="middle" filter="drop-shadow(0px 2px 4px rgba(0,0,0,0.4))">
+    Happy Homeowners & Family
+  </text>
+  <text x="300" y="752" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="500" font-size="17" fill="#E0F2FE" text-anchor="middle" opacity="0.9">
+    Aspect Ratio 3:4 / 4:5 • Warm Golden Hour Sunlight
+  </text>
+</svg>
