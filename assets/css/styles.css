@@ -946,15 +946,15 @@ select.form-control-input {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 70% center;
+  object-position: 78% center;
   display: block;
 }
 
 /* "Building Better Futures" Cursive Script Overlay */
 .why-script-overlay {
   position: absolute;
-  top: 50px;
-  left: 36px;
+  top: 52px;
+  left: 60px;
   z-index: 10;
   color: #FFFFFF;
   font-family: var(--font-script);
