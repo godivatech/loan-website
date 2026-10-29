@@ -2491,10 +2491,6 @@ select.form-control-input {
   height: 95px;
 }
 
-transform: rotate(-4deg);
-filter: drop-shadow(0 3px 6px rgba(10, 37, 64, 0.7));
-}
-
 .services-script-swoosh {
   width: 130px;
   height: 26px;
