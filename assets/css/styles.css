@@ -4,20 +4,32 @@
    ========================================================================== */
 
 :root {
-  /* Finora Color Palette */
+  /* Finora Primary Brand Colors */
   --finora-teal: #00A884;
   --finora-teal-dark: #00896C;
-  --finora-teal-light: #EBF7F5;
+  --finora-teal-light: #E6F7F3;
   --finora-teal-soft: #F0FAF7;
+  --finora-teal-border: rgba(0, 168, 132, 0.2);
+  --finora-teal-border-hover: #B2E5DC;
+  --finora-teal-shadow: rgba(0, 168, 132, 0.3);
+  --finora-teal-shadow-lg: rgba(0, 168, 132, 0.4);
+  --finora-teal-track: #D1EFE8;
+  --finora-teal-gradient-start: #EBF8F5;
+  --finora-teal-gradient-mid: #F5FBF9;
+
+  /* Finora Dark / Navy Spectrum */
   --finora-navy: #0A2540;
   --finora-navy-light: #1E3A5F;
+  --finora-navy-dark: #06192E;
+
+  /* Neutrals & Typography */
   --finora-text: #334155;
   --finora-muted: #64748B;
   --finora-light: #94A3B8;
   --finora-bg: #FFFFFF;
   --finora-bg-alt: #F8FAFC;
   --finora-border: #E2E8F0;
-  --finora-border-input: #E2E8F0;
+  --finora-border-input: #CBD5E1;
   --finora-input-bg: #F8FAFC;
 
   /* Typography */
@@ -903,7 +915,7 @@ select.form-control-input {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background-color: #E6F7F3;
+  background-color: var(--finora-teal-light);
   color: var(--finora-teal);
   display: flex;
   align-items: center;
@@ -915,7 +927,7 @@ select.form-control-input {
 
 .why-feature-box:hover .why-feature-icon-circle {
   transform: scale(1.08);
-  background-color: #D1EFE8;
+  background-color: var(--finora-teal-track);
 }
 
 .why-feature-title {
@@ -1123,7 +1135,7 @@ select.form-control-input {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: #EBF8F5;
+  background: var(--finora-teal-gradient-start);
   border: 1.5px solid #A4E2D6;
   display: flex;
   align-items: center;
@@ -1182,7 +1194,7 @@ select.form-control-input {
 .how-step-arrow-line {
   width: 100%;
   height: 0;
-  border-top: 2px dotted #00A884;
+  border-top: 2px dotted var(--finora-teal);
   position: relative;
 }
 
@@ -1193,8 +1205,8 @@ select.form-control-input {
   top: -4.5px;
   width: 7px;
   height: 7px;
-  border-top: 2px solid #00A884;
-  border-right: 2px solid #00A884;
+  border-top: 2px solid var(--finora-teal);
+  border-right: 2px solid var(--finora-teal);
   transform: rotate(45deg);
 }
 
@@ -1496,7 +1508,7 @@ select.form-control-input {
 }
 
 .calc-summary-cta:hover {
-  background: #008F6F;
+  background: var(--finora-teal-dark);
   transform: translateY(-2px);
 }
 
@@ -1651,7 +1663,7 @@ select.form-control-input {
   position: relative;
   border-radius: 24px;
   overflow: hidden;
-  background: linear-gradient(90deg, #06192E 0%, #0A2540 38%, rgba(10, 37, 64, 0.75) 65%, rgba(10, 37, 64, 0.25) 90%), #0A2540;
+  background: linear-gradient(90deg, var(--finora-navy-dark) 0%, var(--finora-navy) 38%, rgba(10, 37, 64, 0.75) 65%, rgba(10, 37, 64, 0.25) 90%), var(--finora-navy);
   padding: 44px 48px;
   min-height: 200px;
   display: flex;
@@ -1671,7 +1683,7 @@ select.form-control-input {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, #06192E 0%, #0A2540 38%, rgba(10, 37, 64, 0.78) 58%, rgba(10, 37, 64, 0.2) 82%, transparent 100%);
+  background: linear-gradient(90deg, var(--finora-navy-dark) 0%, var(--finora-navy) 38%, rgba(10, 37, 64, 0.78) 58%, rgba(10, 37, 64, 0.2) 82%, transparent 100%);
   pointer-events: none;
 }
 
@@ -1727,7 +1739,7 @@ select.form-control-input {
 }
 
 .btn-cta-expert:hover {
-  background: #008F6F;
+  background: var(--finora-teal-dark);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 168, 132, 0.45);
 }
@@ -1961,7 +1973,7 @@ select.form-control-input {
 }
 
 .btn-back-to-top:hover {
-  background: #008F6F;
+  background: var(--finora-teal-dark);
   transform: translateY(-3px);
 }
 
@@ -1995,7 +2007,7 @@ select.form-control-input {
 }
 
 .footer-godivatech-link {
-  color: #0A2540;
+  color: var(--finora-navy);
   text-decoration: none;
   transition: color 0.2s ease, text-decoration 0.2s ease;
   display: inline-flex;
@@ -2004,7 +2016,7 @@ select.form-control-input {
 
 .footer-godivatech-link strong {
   font-weight: 800;
-  color: #0A2540;
+  color: var(--finora-navy);
   letter-spacing: -0.01em;
   transition: color 0.2s ease;
 }
@@ -2070,7 +2082,7 @@ select.form-control-input {
 }
 
 .modal-content-box {
-  background: #FFFFFF;
+  background: var(--finora-bg);
   border-radius: 24px;
   max-width: 520px;
   width: 100%;
@@ -2103,6 +2115,159 @@ select.form-control-input {
   font-size: 1.4rem;
   color: var(--finora-muted);
   cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.modal-close-icon:hover {
+  color: var(--finora-navy);
+}
+
+/* Centralized Modal Typography & Form Components */
+.modal-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--finora-navy);
+  margin-bottom: 6px;
+}
+
+.modal-subtitle {
+  font-size: 0.875rem;
+  color: var(--finora-muted);
+  margin-bottom: 20px;
+}
+
+.modal-form-group {
+  margin-bottom: 14px;
+}
+
+.modal-form-group-last {
+  margin-bottom: 18px;
+}
+
+.modal-form-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--finora-navy);
+  margin-bottom: 4px;
+}
+
+.modal-form-input,
+.modal-form-select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--finora-border-input);
+  border-radius: 10px;
+  font-size: 0.9375rem;
+  font-family: var(--font-sans);
+  background: var(--finora-bg);
+  color: var(--finora-text);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-form-input:focus,
+.modal-form-select:focus {
+  border-color: var(--finora-teal);
+  box-shadow: 0 0 0 3px var(--finora-teal-border);
+}
+
+.modal-submit-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 13px;
+  font-size: 0.9375rem;
+}
+
+/* Centralized Video Modal */
+.modal-video-box {
+  max-width: 680px;
+  padding: 24px;
+}
+
+.modal-video-title {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+.modal-video-aspect-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: var(--finora-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-video-placeholder-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--finora-bg);
+  text-align: center;
+  padding: 20px;
+}
+
+.modal-video-play-center {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--finora-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+  box-shadow: 0 8px 24px var(--finora-teal-shadow-lg);
+  color: var(--finora-bg);
+}
+
+.modal-video-play-center i {
+  margin-left: 4px;
+}
+
+.modal-video-card-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: var(--finora-bg);
+}
+
+.modal-video-card-desc {
+  font-size: 0.875rem;
+  color: var(--finora-light);
+  max-width: 440px;
+}
+
+/* Centralized Enquiry Form Success State */
+.form-success-state {
+  display: none;
+  text-align: center;
+  padding: 24px 0;
+}
+
+.form-success-icon {
+  font-size: 2.8rem;
+  color: var(--finora-teal);
+  margin-bottom: 12px;
+}
+
+.form-success-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--finora-navy);
+  margin-bottom: 6px;
+}
+
+.form-success-desc {
+  font-size: 0.875rem;
+  color: var(--finora-muted);
 }
 
 /* ==========================================================================
@@ -2188,6 +2353,7 @@ select.form-control-input {
 
 .mobile-menu-cta-wrap {
   display: none;
+  list-style: none;
 }
 
 @media (max-width: 768px) {
@@ -2236,31 +2402,60 @@ select.form-control-input {
   .mobile-menu-cta-wrap {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding-top: 14px;
-    border-top: 1px solid #E2E8F0;
+    gap: 10px;
+    padding-top: 16px;
+    margin-top: 10px;
+    border-top: 1px solid var(--finora-border);
+    width: 100%;
+    list-style: none;
+  }
+
+  .mobile-drawer-btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     width: 100%;
   }
 
   .mobile-drawer-cta {
-    width: 100%;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    gap: 8px;
+    width: 100%;
     padding: 13px 20px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: var(--radius-pill);
+    background: var(--finora-teal);
+    color: var(--finora-bg);
     font-size: 0.9375rem;
+    box-shadow: 0 4px 14px var(--finora-teal-shadow);
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .mobile-drawer-cta:hover {
+    background: var(--finora-teal-dark);
   }
 
   .mobile-drawer-phone {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 10px 16px;
-    border-radius: 30px;
-    background: #E6F7F3;
+    gap: 8px;
+    background: var(--finora-teal-light);
     color: var(--finora-teal);
     font-weight: 700;
     font-size: 0.875rem;
+    padding: 11px 16px;
+    border-radius: var(--radius-pill);
     text-decoration: none;
+    border: 1px solid var(--finora-teal-border);
+    transition: background 0.2s ease;
+  }
+
+  .mobile-drawer-phone:hover {
+    background: var(--finora-teal-soft);
   }
 
   .expert-call-box {
@@ -2415,7 +2610,7 @@ select.form-control-input {
 .services-hero-section {
   position: relative;
   padding: 40px 0 120px 0;
-  background: radial-gradient(circle at 12% 25%, #EBF8F5 0%, #F5FBF9 45%, #FFFFFF 85%);
+  background: radial-gradient(circle at 12% 25%, var(--finora-teal-gradient-start) 0%, var(--finora-teal-gradient-mid) 45%, var(--finora-bg) 85%);
   overflow: hidden;
 }
 
@@ -2513,7 +2708,7 @@ select.form-control-input {
 
 .services-feature-pill:hover {
   transform: translateY(-2px);
-  border-color: #B2E5DC;
+  border-color: var(--finora-teal-border-hover);
   box-shadow: 0 8px 18px rgba(0, 168, 132, 0.12);
 }
 
@@ -2521,7 +2716,7 @@ select.form-control-input {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #E6F7F3;
+  background: var(--finora-teal-light);
   color: var(--finora-teal);
   display: flex;
   align-items: center;
@@ -2677,7 +2872,7 @@ select.form-control-input {
 
 .service-detail-card:hover {
   transform: translateY(-4px);
-  border-color: #B2E5DC;
+  border-color: var(--finora-teal-border-hover);
   box-shadow: 0 20px 40px -10px rgba(0, 168, 132, 0.12);
 }
 
@@ -2768,7 +2963,7 @@ select.form-control-input {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #E6F7F3;
+  background: var(--finora-teal-light);
   color: var(--finora-teal);
   display: flex;
   align-items: center;
@@ -2914,7 +3109,7 @@ select.form-control-input {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: #E6F7F3;
+  background-color: var(--finora-teal-light);
   color: var(--finora-teal);
   display: flex;
   align-items: center;
@@ -2926,7 +3121,7 @@ select.form-control-input {
 
 .journey-feature-item:hover .journey-feature-icon-bubble {
   transform: scale(1.08);
-  background-color: #D1EFE8;
+  background-color: var(--finora-teal-track);
 }
 
 .journey-feature-title {
@@ -3240,7 +3435,7 @@ select.form-control-input {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: #E6F7F3;
+  background: var(--finora-teal-light);
   color: var(--finora-teal);
   display: flex;
   align-items: center;
@@ -3375,7 +3570,7 @@ select.form-control-input {
 .about-hero-section {
   position: relative;
   padding: 40px 0 120px 0;
-  background: radial-gradient(circle at 12% 25%, #EBF8F5 0%, #F5FBF9 45%, #FFFFFF 85%);
+  background: radial-gradient(circle at 12% 25%, var(--finora-teal-gradient-start) 0%, var(--finora-teal-gradient-mid) 45%, var(--finora-bg) 85%);
   overflow: hidden;
 }
 
@@ -3609,7 +3804,7 @@ select.form-control-input {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #E6F7F3;
+  background: var(--finora-teal-light);
   color: var(--finora-teal);
   display: flex;
   align-items: center;
@@ -3686,7 +3881,7 @@ select.form-control-input {
 
 .value-feature-card:hover {
   transform: translateY(-3px);
-  border-color: #B2E5DC;
+  border-color: var(--finora-teal-border-hover);
   box-shadow: 0 14px 30px rgba(0, 168, 132, 0.12);
 }
 
@@ -3694,7 +3889,7 @@ select.form-control-input {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #E6F7F3;
+  background: var(--finora-teal-light);
   color: var(--finora-teal);
   display: flex;
   align-items: center;
@@ -3853,7 +4048,7 @@ select.form-control-input {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #E6F7F3;
+  background: var(--finora-teal-light);
   color: var(--finora-teal);
   display: flex;
   align-items: center;
@@ -3957,7 +4152,7 @@ select.form-control-input {
 }
 
 .partner-logo-box:hover {
-  border-color: #B2E5DC;
+  border-color: var(--finora-teal-border-hover);
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(0, 168, 132, 0.12);
 }
@@ -4079,7 +4274,7 @@ select.form-control-input {
 .how-hero-section {
   position: relative;
   padding: 40px 0 120px 0;
-  background: radial-gradient(circle at 12% 25%, #EBF8F5 0%, #F5FBF9 45%, #FFFFFF 85%);
+  background: radial-gradient(circle at 12% 25%, var(--finora-teal-gradient-start) 0%, var(--finora-teal-gradient-mid) 45%, var(--finora-bg) 85%);
   overflow: hidden;
 }
 
@@ -4178,7 +4373,7 @@ select.form-control-input {
   font-family: 'Caveat', cursive;
   font-size: 2.1rem;
   font-weight: 700;
-  color: #0A2540;
+  color: var(--finora-navy);
   line-height: 1.05;
   letter-spacing: 0.01em;
   display: flex;
@@ -4257,7 +4452,7 @@ select.form-control-input {
 .roadmap-connector {
   flex: 1;
   height: 2px;
-  border-top: 2px dashed #00A884;
+  border-top: 2px dashed var(--finora-teal);
   position: relative;
   margin: 0 14px;
 }
@@ -4271,7 +4466,7 @@ select.form-control-input {
   height: 0;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
-  border-left: 7px solid #00A884;
+  border-left: 7px solid var(--finora-teal);
 }
 
 /* 4 Step Cards Grid */
@@ -4320,7 +4515,7 @@ select.form-control-input {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #E6F7F3;
+  background: var(--finora-teal-light);
   color: var(--finora-teal);
   display: flex;
   align-items: center;
@@ -4409,7 +4604,7 @@ select.form-control-input {
   font-family: 'Caveat', cursive;
   font-size: 2.2rem;
   font-weight: 700;
-  color: #0A2540;
+  color: var(--finora-navy);
   line-height: 1.05;
   letter-spacing: 0.01em;
   display: flex;
@@ -4470,7 +4665,7 @@ select.form-control-input {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #E6F7F3;
+  background: var(--finora-teal-light);
   color: var(--finora-teal);
   display: flex;
   align-items: center;
@@ -4552,7 +4747,7 @@ select.form-control-input {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #E6F7F3;
+  background: var(--finora-teal-light);
   color: var(--finora-teal);
   display: flex;
   align-items: center;
@@ -4758,7 +4953,7 @@ select.form-control-input {
 .contact-hero-section {
   position: relative;
   padding: 40px 0 120px 0;
-  background: radial-gradient(circle at 12% 25%, #EBF8F5 0%, #F5FBF9 45%, #FFFFFF 85%);
+  background: radial-gradient(circle at 12% 25%, var(--finora-teal-gradient-start) 0%, var(--finora-teal-gradient-mid) 45%, var(--finora-bg) 85%);
   overflow: hidden;
 }
 
@@ -4857,7 +5052,7 @@ select.form-control-input {
   font-family: 'Caveat', cursive;
   font-size: 2.1rem;
   font-weight: 700;
-  color: #0A2540;
+  color: var(--finora-navy);
   line-height: 1.05;
   letter-spacing: 0.01em;
   display: flex;
@@ -4930,7 +5125,7 @@ select.form-control-input {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #E6F7F3;
+  background: var(--finora-teal-light);
   color: var(--finora-teal);
   display: flex;
   align-items: center;
@@ -4981,7 +5176,7 @@ select.form-control-input {
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--finora-teal);
-  background: #E6F7F3;
+  background: var(--finora-teal-light);
   padding: 4px 10px;
   border-radius: 20px;
   margin-bottom: 18px;
@@ -5162,7 +5357,7 @@ select.form-control-input {
   display: flex;
   align-items: center;
   gap: 14px;
-  background: #E6F7F3;
+  background: var(--finora-teal-light);
   border: 1px solid rgba(0, 168, 132, 0.3);
   padding: 16px 20px;
   border-radius: 12px;
@@ -5233,7 +5428,7 @@ select.form-control-input {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: #E6F7F3;
+  background: var(--finora-teal-light);
   color: var(--finora-teal);
   display: flex;
   align-items: center;
@@ -5376,7 +5571,7 @@ select.form-control-input {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--finora-teal);
-  background: #E6F7F3;
+  background: var(--finora-teal-light);
   padding: 4px 12px;
   border-radius: 20px;
   margin-bottom: 14px;

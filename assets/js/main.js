@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const max = parseFloat(slider.max) || 100;
     const val = parseFloat(slider.value) || 0;
     const pct = ((val - min) / (max - min)) * 100;
-    slider.style.background = `linear-gradient(to right, #00A884 0%, #00A884 ${pct}%, #E2E8F0 ${pct}%, #E2E8F0 100%)`;
+    slider.style.background = `linear-gradient(to right, var(--finora-teal) 0%, var(--finora-teal) ${pct}%, var(--finora-border) ${pct}%, var(--finora-border) 100%)`;
   }
 
   function updateFinoraEmiCalculations() {
