@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="100%" height="100%" fill="none">
-  <!-- Finora House / Roof Emblem -->
+  <!-- Finora Corporate Banking Emblem -->
   <g transform="translate(6, 6)">
-    <!-- Outer Roof Outline -->
-    <path d="M24 6 L44 22 V42 H4 V22 Z" stroke="#00A884" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    <!-- Inner Stylized Chevron / House -->
-    <path d="M24 16 L35 25 V38 H13 V25 Z" stroke="#0A2540" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    <!-- Central Pillar / Keyline -->
-    <line x1="24" y1="26" x2="24" y2="38" stroke="#00A884" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Outer Roof Outline (Trust Royal Blue) -->
+    <path d="M24 6 L44 22 V42 H4 V22 Z" stroke="#004C8F" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Inner Stylized Chevron (Vibrant Crimson Red Accent) -->
+    <path d="M24 16 L35 25 V38 H13 V25 Z" stroke="#ED232A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Central Pillar / Keyline (Trust Royal Blue) -->
+    <line x1="24" y1="26" x2="24" y2="38" stroke="#004C8F" stroke-width="3.5" stroke-linecap="round"/>
   </g>
   <!-- Finora Typography -->
-  <text x="62" y="34" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="28" fill="#0A2540" letter-spacing="-0.8">
+  <text x="62" y="34" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="28" fill="#004C8F" letter-spacing="-0.8">
     Finora
   </text>
   <text x="63" y="47" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="600" font-size="9.5" fill="#64748B" letter-spacing="1.2">

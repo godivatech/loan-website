@@ -4,20 +4,27 @@
    ========================================================================== */
 
 :root {
-  /* Finora Primary Brand Colors */
-  --finora-teal: #00A884;
-  --finora-teal-dark: #00896C;
-  --finora-teal-light: #E6F7F3;
-  --finora-teal-soft: #F0FAF7;
-  --finora-teal-border: rgba(0, 168, 132, 0.2);
-  --finora-teal-border-hover: #B2E5DC;
-  --finora-teal-shadow: rgba(0, 168, 132, 0.3);
-  --finora-teal-shadow-lg: rgba(0, 168, 132, 0.4);
-  --finora-teal-track: #D1EFE8;
-  --finora-teal-gradient-start: #EBF8F5;
-  --finora-teal-gradient-mid: #F5FBF9;
+  /* Primary Banking Blue Brand Colors */
+  --finora-teal: #004C8F;
+  --finora-teal-dark: #00386C;
+  --finora-teal-light: #EBF3FA;
+  --finora-teal-soft: #F3F7FC;
+  --finora-teal-border: rgba(0, 76, 143, 0.2);
+  --finora-teal-border-hover: #A5C8E6;
+  --finora-teal-shadow: rgba(0, 76, 143, 0.25);
+  --finora-teal-shadow-lg: rgba(0, 76, 143, 0.38);
+  --finora-teal-track: #CCE0F2;
+  --finora-teal-gradient-start: #EAF2FA;
+  --finora-teal-gradient-mid: #F4F8FC;
 
-  /* Finora Dark / Navy Spectrum */
+  /* Action Crimson Red / High-Impact Accents */
+  --finora-red: #ED232A;
+  --finora-red-dark: #C8102E;
+  --finora-red-light: #FDE8E9;
+  --finora-red-border: rgba(237, 35, 42, 0.2);
+  --finora-red-shadow: rgba(237, 35, 42, 0.28);
+
+  /* Deep Authority Navy */
   --finora-navy: #0A2540;
   --finora-navy-light: #1E3A5F;
   --finora-navy-dark: #06192E;
@@ -40,7 +47,7 @@
   --shadow-sm: 0 2px 6px rgba(10, 37, 64, 0.04);
   --shadow-md: 0 10px 25px -5px rgba(10, 37, 64, 0.08);
   --shadow-card: 0 20px 45px -10px rgba(10, 37, 64, 0.12), 0 8px 16px -6px rgba(10, 37, 64, 0.04);
-  --shadow-pill: 0 14px 30px -8px rgba(0, 168, 132, 0.25);
+  --shadow-pill: 0 14px 30px -8px rgba(0, 76, 143, 0.25);
   --shadow-card-hover: 0 20px 35px -8px rgba(10, 37, 64, 0.1), 0 8px 15px -4px rgba(10, 37, 64, 0.05);
 
   /* Radius */
@@ -190,7 +197,7 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 168, 132, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 76, 143, 0.25);
   transition: transform 0.2s;
 }
 
@@ -237,7 +244,7 @@ body {
 .btn-teal-pill:hover {
   background-color: var(--finora-teal-dark);
   transform: translateY(-2px);
-  box-shadow: 0 18px 35px -8px rgba(0, 168, 132, 0.35);
+  box-shadow: 0 18px 35px -8px rgba(0, 76, 143, 0.35);
 }
 
 .mobile-menu-btn {
@@ -255,7 +262,7 @@ body {
 .finora-hero {
   position: relative;
   padding: 50px 0 120px 0;
-  background: radial-gradient(circle at 10% 20%, #F0FAF7 0%, #FFFFFF 55%);
+  background: radial-gradient(circle at 10% 20%, var(--finora-teal-soft) 0%, #FFFFFF 55%);
   overflow: hidden;
 }
 
@@ -400,7 +407,7 @@ body {
 
 .video-trigger-btn:hover .video-play-bubble {
   transform: scale(1.12);
-  box-shadow: 0 12px 25px rgba(0, 168, 132, 0.25);
+  box-shadow: 0 12px 25px rgba(0, 76, 143, 0.25);
 }
 
 .video-text-meta {
@@ -498,7 +505,7 @@ body {
 .form-control-input:focus {
   border-color: var(--finora-teal);
   background: #FFFFFF;
-  box-shadow: 0 0 0 3px rgba(0, 168, 132, 0.12);
+  box-shadow: 0 0 0 3px rgba(0, 76, 143, 0.12);
 }
 
 .input-field-group:focus-within .input-icon {
@@ -537,7 +544,7 @@ select.form-control-input {
 .btn-submit-enquiry:hover {
   background-color: var(--finora-teal-dark);
   transform: translateY(-2px);
-  box-shadow: 0 18px 30px -8px rgba(0, 168, 132, 0.4);
+  box-shadow: 0 18px 30px -8px rgba(0, 76, 143, 0.4);
 }
 
 .privacy-badge-note {
@@ -727,7 +734,7 @@ select.form-control-input {
 .finora-service-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-card-hover);
-  border-color: rgba(0, 168, 132, 0.25);
+  border-color: rgba(0, 76, 143, 0.25);
 }
 
 /* Card Top Media with Wave Curve */
@@ -776,7 +783,7 @@ select.form-control-input {
   align-items: center;
   justify-content: center;
   font-size: 1.15rem;
-  box-shadow: 0 4px 12px rgba(0, 168, 132, 0.35);
+  box-shadow: 0 4px 12px rgba(0, 76, 143, 0.35);
   border: 3.5px solid #FFFFFF;
   z-index: 5;
   transition: transform 0.3s ease, background-color 0.3s ease;
@@ -840,7 +847,7 @@ select.form-control-input {
 /* Large Full-Width Card Banner */
 .why-choose-card-banner {
   background: #FFFFFF;
-  background-image: radial-gradient(ellipse at 15% 45%, rgba(220, 248, 242, 0.7) 0%, rgba(240, 250, 247, 0.45) 45%, rgba(255, 255, 255, 0) 75%);
+  background-image: radial-gradient(ellipse at 15% 45%, rgba(220, 238, 252, 0.7) 0%, rgba(240, 250, 247, 0.45) 45%, rgba(255, 255, 255, 0) 75%);
   border-radius: 36px;
   border: 1px solid #E2E8F0;
   box-shadow: 0 16px 45px -10px rgba(10, 37, 64, 0.07);
@@ -865,7 +872,7 @@ select.form-control-input {
 .why-choose-badge {
   display: inline-block;
   padding: 6px 18px;
-  background-color: #E2F5F1;
+  background-color: var(--finora-teal-light);
   color: var(--finora-teal);
   font-size: 0.75rem;
   font-weight: 800;
@@ -921,7 +928,7 @@ select.form-control-input {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(0, 168, 132, 0.12);
+  box-shadow: 0 4px 10px rgba(0, 76, 143, 0.12);
   transition: transform 0.25s ease, background-color 0.25s ease;
 }
 
@@ -1082,7 +1089,7 @@ select.form-control-input {
 
 .finora-pill-badge {
   display: inline-block;
-  background: rgba(0, 168, 132, 0.12);
+  background: rgba(0, 76, 143, 0.12);
   color: var(--finora-teal);
   font-size: 0.75rem;
   font-weight: 700;
@@ -1136,7 +1143,7 @@ select.form-control-input {
   height: 52px;
   border-radius: 50%;
   background: var(--finora-teal-gradient-start);
-  border: 1.5px solid #A4E2D6;
+  border: 1.5px solid var(--finora-teal-border-hover);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1145,7 +1152,7 @@ select.form-control-input {
 
 .how-step-col:hover .how-step-icon-bubble {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 168, 132, 0.2);
+  box-shadow: 0 6px 16px rgba(0, 76, 143, 0.2);
 }
 
 .how-step-title-line {
@@ -1291,7 +1298,7 @@ select.form-control-input {
 
 .calc-input-box:focus-within {
   border-color: var(--finora-teal);
-  box-shadow: 0 0 0 3px rgba(0, 168, 132, 0.15);
+  box-shadow: 0 0 0 3px rgba(0, 76, 143, 0.15);
 }
 
 .calc-input-field {
@@ -1327,7 +1334,7 @@ select.form-control-input {
   background: var(--finora-teal);
   cursor: pointer;
   border: none;
-  box-shadow: 0 2px 6px rgba(0, 168, 132, 0.4);
+  box-shadow: 0 2px 6px rgba(0, 76, 143, 0.4);
   transition: transform 0.15s;
 }
 
@@ -1342,7 +1349,7 @@ select.form-control-input {
   background: var(--finora-teal);
   cursor: pointer;
   border: none;
-  box-shadow: 0 2px 6px rgba(0, 168, 132, 0.4);
+  box-shadow: 0 2px 6px rgba(0, 76, 143, 0.4);
 }
 
 .calc-scale-labels {
@@ -1504,7 +1511,7 @@ select.form-control-input {
   border-radius: 30px;
   text-decoration: none;
   transition: background 0.25s, transform 0.2s;
-  box-shadow: 0 6px 16px rgba(0, 168, 132, 0.35);
+  box-shadow: 0 6px 16px rgba(0, 76, 143, 0.35);
 }
 
 .calc-summary-cta:hover {
@@ -1735,13 +1742,13 @@ select.form-control-input {
   border-radius: 30px;
   text-decoration: none;
   transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
-  box-shadow: 0 6px 16px rgba(0, 168, 132, 0.35);
+  box-shadow: 0 6px 16px rgba(0, 76, 143, 0.35);
 }
 
 .btn-cta-expert:hover {
   background: var(--finora-teal-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 168, 132, 0.45);
+  box-shadow: 0 8px 20px rgba(0, 76, 143, 0.45);
 }
 
 .btn-cta-whatsapp {
@@ -1968,7 +1975,7 @@ select.form-control-input {
   justify-content: center;
   cursor: pointer;
   font-size: 1rem;
-  box-shadow: 0 6px 16px rgba(0, 168, 132, 0.35);
+  box-shadow: 0 6px 16px rgba(0, 76, 143, 0.35);
   transition: background 0.2s, transform 0.2s;
 }
 
@@ -2638,7 +2645,7 @@ select.form-control-input {
   right: 15%;
   width: 450px;
   height: 180px;
-  background: radial-gradient(ellipse at 50% 0%, rgba(0, 168, 132, 0.18) 0%, rgba(220, 248, 242, 0) 70%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(0, 76, 143, 0.18) 0%, rgba(220, 238, 252, 0) 70%);
   z-index: 2;
   pointer-events: none;
 }
@@ -2709,7 +2716,7 @@ select.form-control-input {
 .services-feature-pill:hover {
   transform: translateY(-2px);
   border-color: var(--finora-teal-border-hover);
-  box-shadow: 0 8px 18px rgba(0, 168, 132, 0.12);
+  box-shadow: 0 8px 18px rgba(0, 76, 143, 0.12);
 }
 
 .feature-pill-icon {
@@ -2849,7 +2856,7 @@ select.form-control-input {
   border-color: var(--finora-teal);
   color: var(--finora-teal);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 168, 132, 0.15);
+  box-shadow: 0 6px 16px rgba(0, 76, 143, 0.15);
 }
 
 /* 2x2 Grid of Detailed Cards */
@@ -2873,7 +2880,7 @@ select.form-control-input {
 .service-detail-card:hover {
   transform: translateY(-4px);
   border-color: var(--finora-teal-border-hover);
-  box-shadow: 0 20px 40px -10px rgba(0, 168, 132, 0.12);
+  box-shadow: 0 20px 40px -10px rgba(0, 76, 143, 0.12);
 }
 
 /* Card Media (Left Half) */
@@ -2920,7 +2927,7 @@ select.form-control-input {
   justify-content: center;
   font-size: 1.15rem;
   margin-bottom: 14px;
-  box-shadow: 0 6px 14px rgba(0, 168, 132, 0.25);
+  box-shadow: 0 6px 14px rgba(0, 76, 143, 0.25);
   flex-shrink: 0;
 }
 
@@ -3115,7 +3122,7 @@ select.form-control-input {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(0, 168, 132, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 76, 143, 0.12);
   transition: transform 0.25s ease, background-color 0.25s ease;
 }
 
@@ -3236,7 +3243,7 @@ select.form-control-input {
   right: -50px;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(220, 248, 242, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(220, 238, 252, 0.8) 0%, rgba(255, 255, 255, 0) 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -3309,7 +3316,7 @@ select.form-control-input {
 .field-input:focus {
   background: #FFFFFF;
   border-color: var(--finora-teal);
-  box-shadow: 0 0 0 3px rgba(0, 168, 132, 0.12);
+  box-shadow: 0 0 0 3px rgba(0, 76, 143, 0.12);
 }
 
 .field-select {
@@ -3342,7 +3349,7 @@ select.form-control-input {
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: 0 10px 24px rgba(0, 168, 132, 0.28);
+  box-shadow: 0 10px 24px rgba(0, 76, 143, 0.28);
   font-family: inherit;
   position: relative;
   z-index: 2;
@@ -3351,7 +3358,7 @@ select.form-control-input {
 .btn-submit-expert-enquiry:hover {
   background: var(--finora-teal-dark);
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(0, 168, 132, 0.38);
+  box-shadow: 0 14px 30px rgba(0, 76, 143, 0.38);
 }
 
 .form-privacy-guarantee {
@@ -3428,7 +3435,7 @@ select.form-control-input {
   border-color: var(--finora-teal);
   color: var(--finora-teal);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 168, 132, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 76, 143, 0.15);
 }
 
 .btn-phone-circle {
@@ -3463,8 +3470,8 @@ select.form-control-input {
 }
 
 .faq-accordion-item.active {
-  border-color: #A7E3D6;
-  box-shadow: 0 6px 20px rgba(0, 168, 132, 0.08);
+  border-color: var(--finora-teal-border-hover);
+  box-shadow: 0 6px 20px rgba(0, 76, 143, 0.08);
 }
 
 .faq-accordion-header {
@@ -3640,7 +3647,7 @@ select.form-control-input {
   right: 15%;
   width: 450px;
   height: 180px;
-  background: radial-gradient(ellipse at 50% 0%, rgba(0, 168, 132, 0.18) 0%, rgba(220, 248, 242, 0) 70%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(0, 76, 143, 0.18) 0%, rgba(220, 238, 252, 0) 70%);
   z-index: 2;
   pointer-events: none;
 }
@@ -3882,7 +3889,7 @@ select.form-control-input {
 .value-feature-card:hover {
   transform: translateY(-3px);
   border-color: var(--finora-teal-border-hover);
-  box-shadow: 0 14px 30px rgba(0, 168, 132, 0.12);
+  box-shadow: 0 14px 30px rgba(0, 76, 143, 0.12);
 }
 
 .value-icon-bubble {
@@ -4154,7 +4161,7 @@ select.form-control-input {
 .partner-logo-box:hover {
   border-color: var(--finora-teal-border-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0, 168, 132, 0.12);
+  box-shadow: 0 10px 24px rgba(0, 76, 143, 0.12);
 }
 
 .bank-svg-logo {
@@ -4302,7 +4309,7 @@ select.form-control-input {
   right: 15%;
   width: 450px;
   height: 180px;
-  background: radial-gradient(ellipse at 50% 0%, rgba(0, 168, 132, 0.18) 0%, rgba(220, 248, 242, 0) 70%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(0, 76, 143, 0.18) 0%, rgba(220, 238, 252, 0) 70%);
   z-index: 2;
   pointer-events: none;
 }
@@ -4385,7 +4392,7 @@ select.form-control-input {
   width: 110px;
   height: 24px;
   margin-top: 4px;
-  filter: drop-shadow(0 2px 4px rgba(0, 168, 132, 0.25));
+  filter: drop-shadow(0 2px 4px rgba(0, 76, 143, 0.25));
 }
 
 /* 2. The Loan Journey Section */
@@ -4438,7 +4445,7 @@ select.form-control-input {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px rgba(0, 168, 132, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 76, 143, 0.35);
   flex-shrink: 0;
   position: relative;
   z-index: 2;
@@ -4490,7 +4497,7 @@ select.form-control-input {
 .how-process-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 16px 36px rgba(10, 37, 64, 0.1);
-  border-color: rgba(0, 168, 132, 0.35);
+  border-color: rgba(0, 76, 143, 0.35);
 }
 
 .process-card-photo-wrap {
@@ -4522,7 +4529,7 @@ select.form-control-input {
   justify-content: center;
   font-size: 1.15rem;
   border: 3px solid #FFFFFF;
-  box-shadow: 0 4px 12px rgba(0, 168, 132, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 76, 143, 0.2);
   z-index: 2;
   transition: transform 0.25s ease, background 0.25s ease;
 }
@@ -4616,7 +4623,7 @@ select.form-control-input {
   width: 105px;
   height: 22px;
   margin-top: 4px;
-  filter: drop-shadow(0 2px 4px rgba(0, 168, 132, 0.25));
+  filter: drop-shadow(0 2px 4px rgba(0, 76, 143, 0.25));
 }
 
 .docs-content-side {
@@ -4658,7 +4665,7 @@ select.form-control-input {
 .doc-item-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 24px rgba(10, 37, 64, 0.08);
-  border-color: rgba(0, 168, 132, 0.4);
+  border-color: rgba(0, 76, 143, 0.4);
 }
 
 .doc-icon-bubble {
@@ -4831,7 +4838,7 @@ select.form-control-input {
 
 .btn-faq-contact-team:hover {
   border-color: var(--finora-teal);
-  background: #F0FAF7;
+  background: var(--finora-teal-soft);
   transform: translateX(4px);
 }
 
@@ -4934,7 +4941,7 @@ select.form-control-input {
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  box-shadow: 0 4px 14px rgba(0, 168, 132, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 76, 143, 0.35);
   z-index: 99;
   transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
@@ -4942,7 +4949,7 @@ select.form-control-input {
 .back-to-top-btn:hover {
   background: #008f6f;
   transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 168, 132, 0.45);
+  box-shadow: 0 8px 20px rgba(0, 76, 143, 0.45);
 }
 
 /* ==========================================================================
@@ -4981,7 +4988,7 @@ select.form-control-input {
   right: 15%;
   width: 450px;
   height: 180px;
-  background: radial-gradient(ellipse at 50% 0%, rgba(0, 168, 132, 0.18) 0%, rgba(220, 248, 242, 0) 70%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(0, 76, 143, 0.18) 0%, rgba(220, 238, 252, 0) 70%);
   z-index: 2;
   pointer-events: none;
 }
@@ -5064,7 +5071,7 @@ select.form-control-input {
   width: 110px;
   height: 24px;
   margin-top: 4px;
-  filter: drop-shadow(0 2px 4px rgba(0, 168, 132, 0.25));
+  filter: drop-shadow(0 2px 4px rgba(0, 76, 143, 0.25));
 }
 
 /* 2. Direct Contact Channels Section */
@@ -5118,7 +5125,7 @@ select.form-control-input {
 .channel-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 14px 34px rgba(10, 37, 64, 0.09);
-  border-color: rgba(0, 168, 132, 0.4);
+  border-color: rgba(0, 76, 143, 0.4);
 }
 
 .channel-icon-bubble {
@@ -5293,7 +5300,7 @@ select.form-control-input {
 .contact-select:focus,
 .contact-textarea:focus {
   border-color: var(--finora-teal);
-  box-shadow: 0 0 0 3px rgba(0, 168, 132, 0.15);
+  box-shadow: 0 0 0 3px rgba(0, 76, 143, 0.15);
 }
 
 .textarea-wrap {
@@ -5342,7 +5349,7 @@ select.form-control-input {
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 6px 18px rgba(0, 168, 132, 0.35);
+  box-shadow: 0 6px 18px rgba(0, 76, 143, 0.35);
   transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
   margin-top: 6px;
 }
@@ -5350,7 +5357,7 @@ select.form-control-input {
 .btn-contact-submit:hover {
   background: #008f6f;
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0, 168, 132, 0.45);
+  box-shadow: 0 10px 24px rgba(0, 76, 143, 0.45);
 }
 
 .contact-success-alert {
@@ -5358,7 +5365,7 @@ select.form-control-input {
   align-items: center;
   gap: 14px;
   background: var(--finora-teal-light);
-  border: 1px solid rgba(0, 168, 132, 0.3);
+  border: 1px solid rgba(0, 76, 143, 0.3);
   padding: 16px 20px;
   border-radius: 12px;
   margin-top: 18px;
@@ -5560,7 +5567,7 @@ select.form-control-input {
 .branch-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 14px 34px rgba(10, 37, 64, 0.09);
-  border-color: rgba(0, 168, 132, 0.4);
+  border-color: rgba(0, 76, 143, 0.4);
 }
 
 .branch-card-badge {
