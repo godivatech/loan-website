@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Custom Finora Stylesheet -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=1793429344368">
+  <link rel="stylesheet" href="assets/css/styles.css?v=1793612784973">
 </head>
 <body>
 
@@ -147,67 +147,26 @@
           </div>
         </div>
 
-        <!-- Right Column: Floating Consultation Form Card -->
-        <div class="hero-form-col">
-          <div class="consultation-card" id="consultation">
-            <div class="consultation-card-header">
-              <h2 class="card-title">Get a Free Consultation</h2>
-              <p class="card-subtitle">
-                Tell us your requirement and our expert will get in touch with you.
-              </p>
+                <!-- Right Column: Clean Visual Showcase & Floating Trust Badges -->
+        <div class="hero-visual-col">
+          <div class="hero-trust-badge hero-trust-badge-top">
+            <div class="hero-badge-icon">
+              <i class="fa-solid fa-star"></i>
             </div>
-
-            <div id="consultationSuccess" class="form-success-state">
-              <i class="fa-solid fa-circle-check form-success-icon"></i>
-              <h3 class="form-success-title">Enquiry Submitted!</h3>
-              <p class="form-success-desc">
-                Our loan specialist will call you shortly on your provided mobile number.
-              </p>
+            <div class="hero-badge-content">
+              <strong>4.9 / 5 Rating</strong>
+              <span>10,000+ Happy Borrowers</span>
             </div>
+          </div>
 
-            <form class="consultation-form" id="heroConsultationForm">
-              <!-- Field 1: Full Name -->
-              <div class="input-field-group">
-                <i class="fa-regular fa-user input-icon"></i>
-                <input type="text" class="form-control-input" required placeholder="Enter your name">
-              </div>
-
-              <!-- Field 2: Mobile Number -->
-              <div class="input-field-group">
-                <i class="fa-solid fa-mobile-screen-button input-icon"></i>
-                <input type="tel" class="form-control-input" required placeholder="Enter your mobile number">
-              </div>
-
-              <!-- Field 3: Select Loan Type -->
-              <div class="input-field-group">
-                <i class="fa-regular fa-file-lines input-icon"></i>
-                <select class="form-control-input" required>
-                  <option value="" disabled selected>Select Loan Type</option>
-                  <option value="home">Home Loan</option>
-                  <option value="property">Loan Against Property (LAP)</option>
-                  <option value="business">Business Loan</option>
-                  <option value="personal">Personal Loan</option>
-                </select>
-              </div>
-
-              <!-- Field 4: Approx Loan Amount -->
-              <div class="input-field-group">
-                <i class="fa-solid fa-wallet input-icon"></i>
-                <input type="text" class="form-control-input" required placeholder="Enter loan amount">
-              </div>
-
-              <!-- Submit Button -->
-              <button type="submit" class="btn-submit-enquiry">
-                <span>Submit Enquiry</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </button>
-
-              <!-- Privacy Assurance -->
-              <div class="privacy-badge-note">
-                <i class="fa-solid fa-lock"></i>
-                <span>Your information is safe with us. We respect your privacy.</span>
-              </div>
-            </form>
+          <div class="hero-trust-badge hero-trust-badge-bottom">
+            <div class="hero-badge-icon accent-icon">
+              <i class="fa-solid fa-percent"></i>
+            </div>
+            <div class="hero-badge-content">
+              <strong>Lowest ROI from 8.35%*</strong>
+              <span>15+ Premier Bank Partners</span>
+            </div>
           </div>
         </div>
 
@@ -969,7 +928,12 @@
           <input type="tel" required placeholder="Enter your mobile number" class="modal-form-input">
         </div>
 
-        <div class="modal-form-group modal-form-group-last">
+                <div class="modal-form-group">
+          <label class="modal-form-label">Approx. Loan Amount</label>
+          <input type="text" placeholder="Enter loan amount" class="modal-form-input">
+        </div>
+
+<div class="modal-form-group modal-form-group-last">
           <label class="modal-form-label">Loan Type</label>
           <select class="modal-form-select">
             <option>Home Loan</option>
@@ -1009,6 +973,14 @@
   </div>
 
   <!-- Main JavaScript File -->
-  <script src="assets/js/main.js?v=1793429344368"></script>
+  <script src="assets/js/main.js?v=1793612784973"></script>
+  <!-- Floating Consultation Trigger (Bottom-Right) -->
+  <button type="button" class="floating-enquiry-btn js-open-consultation-modal" aria-label="Get Free Consultation">
+    <div class="floating-btn-pulse"></div>
+    <div class="floating-btn-icon-wrap">
+      <i class="fa-solid fa-headset"></i>
+    </div>
+    <span class="floating-btn-label">Free Consultation</span>
+  </button>
 </body>
 </html>
